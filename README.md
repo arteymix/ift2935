@@ -14,8 +14,8 @@ consultation).
 Il faut s'enregistrer pour télécharger le client et ils fournissent un paquet
 `rpm`. C'est important d'installer les paquets:
 
- - oracle-instantclient-basic version 10.2.*
- - oracle-instantclient-devel version 10.2.*
+ - `oracle-instantclient-basic` version `10.2.*`
+ - `oracle-instantclient-devel` version `10.2.*`
 
 Pour indiquer quel librairies utiliser, vous pouvez exporter la variable
 d'environnement `ORACLE_HOME` vers le répertoire d'installation de la librairie
@@ -34,7 +34,7 @@ pip3 install --user cx_Oracle PyYAML
 ```
 
 Pour paramétrer l'exécution, ajoutez un fichier de configuration YAML
-`config/development.yaml`:
+`config.yml`:
 
 ```yaml
 database:
