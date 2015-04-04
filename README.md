@@ -17,12 +17,11 @@ Il faut s'enregistrer pour télécharger le client et ils fournissent un paquet
  - `oracle-instantclient-basic` version `10.2.*`
  - `oracle-instantclient-devel` version `10.2.*`
 
-Pour indiquer quel librairies utiliser, vous pouvez exporter la variable
-d'environnement `ORACLE_HOME` vers le répertoire d'installation de la librairie
-client.
+Pour indiquer quel version d'Oracle utiliser, vous devez exporter la variable
+d'environnement `ORACLE_HOME` vers le répertoire d'installation.
 
 ```bash
-export ORACLE_HOME=/usr/lib/oracle/10.2.0.5/client64/
+export ORACLE_HOME=/usr/lib/oracle/10.2.0.5/client64
 ```
 
 `cx_Oracle` peut s'installer facilement à partir de pip. La documentation est
@@ -38,13 +37,23 @@ Pour paramétrer l'exécution, ajoutez un fichier de configuration YAML
 
 ```yaml
 database:
-    dsn:      "domaine de la base de données"
-    user:     "nom d'usager"
-    password: "mot de passe"
+    dsn:
+        host: delphes.iro.umontreal.ca
+        port: 1521
+        sid:  a05
+    user:     # mettre votre usager au DIRO
+    password: # mot de passe (voir les notes)
 ```
 
 Aucune configuration ne devrait se trouver dans le dépôt, considérant qu'elle
-contiennent des données sensibles.
+contient des données sensibles propre à chaque environnement d'exéction.
+
+Avant de démarrer l'application, il faut rendre la librarire accessible au
+chargement dynamique en exportant `LD_LIBRARY_PATH`.
+
+```bash
+export LD_LIBRARY_PATH=/usr/lib/oracle/10.2.0.5/client64/lib
+```
 
 Ensuite, vous pouvez démarrer l'application:
 
