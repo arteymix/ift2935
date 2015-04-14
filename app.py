@@ -19,21 +19,14 @@ db = connect(**app.config['database'])
 
 @app.route('/')
 def home():
-    cursor = db.cursor()
-    cursor.execute('select * from ALL_TABLES')
-    for row in cursor:
-        app.logger.info(row)
     return render_template('home.html')
 
 @app.route('/search')
 def search():
-    return render_template('search.html')
-    with db:
-        results = db.cursor()
-        query = {'order_by': ''}
-        query.update(request.args)
-        cursor.execute('select * from order by ? limit 10', **query)
-        return render_template('search.html', results=results)
+    results = db.cursor()
+    cursor.execute('select * from videos where name like ? limit 10',
+                   request.args.get('terms', '*'))
+    return render_template('search.html', results=results)
 
 @app.route('/custom-request/<name>')
 def custom_request(name):
