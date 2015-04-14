@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, request, url_for, g
+from flask import Flask, render_template, request, url_for, g, redirect, abort, session
 import yaml
 from cx_Oracle import connect, makedsn
 import os
@@ -20,6 +20,38 @@ db = connect(**app.config['database'])
 @app.route('/')
 def home():
     return render_template('home.html', cinemas=db.cursor().execute('select * from cinema'))
+
+@app.route('/register')
+def register():
+    user = db.cursor()
+    user.prepare('insert into compte values (:username, :password, :adresse,:telephone)')
+    user.prepare('insert into compte')
+
+    user.executemany(None, )
+
+    return redirect(url_for('home'))
+
+@app.route('/login', methods=['POST'])
+def login():
+    identification = db.cursor()
+    with open('sql/identification-simple.sql') as f:
+        identification.prepare(f.read())
+
+    if 'username' not in request.form or 'password' not in request.form:
+        return abort(403)
+
+    app.logger.info(request.form.to_dict())
+
+    row = identification.execute(None, request.form.to_dict()).fetchone()
+
+    if row:
+        session['compte'] = row
+    return redirect(url_for('home'))
+
+@app.route('/logout')
+def logout():
+    session.pop('compte')
+    return redirect(url_for('home'))
 
 @app.route('/search')
 def search():
@@ -80,5 +112,7 @@ def video(video_id):
 @app.route('/preferences')
 def preferences():
     return render_template('preferences.html')
+
+app.config['SECRET_KEY'] = '2312312'
 
 app.run(debug=True)

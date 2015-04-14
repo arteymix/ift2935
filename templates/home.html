@@ -38,7 +38,21 @@
         </ul>
       </div>
       <div class="col-md-4">
-        <p class="text-right">Connecté en tant que Émile Trottier</p>
+        {% if 'compte' in session %}
+        <p class="text-right">
+          Connecté en tant que Émile Trottier
+          <a href="{{ url_for('logout') }}">Déconnexion</a>
+        </p>
+        {% else %}
+        <h3>Authentification</h3>
+        <form method="post" action="{{ url_for('login') }}">
+        <input name="username" placeholder="Nom d'utilisateur"
+        class="form-control">
+        <input name="password" type="password" placeholder="Mot de passe"
+        class="form-control">
+        <button class="btn btn-primary" type="submit">Connexion</button>
+        </form>
+        {% endif %}
       </div>
     </div>
   </hedaer>
