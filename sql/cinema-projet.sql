@@ -1,3 +1,4 @@
+
 -- Afficher toutes les projections d'un film avec George Clooney dans les acteurs, y compris les projections ayant deja eu lieu. 
 Select * 
 From (Cinema join 
