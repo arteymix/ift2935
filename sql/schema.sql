@@ -65,16 +65,18 @@ create table Video(
 			'Western'))
 );
 
---create sequence video_seq;
---
---create or replace trigger video_pk_gen
---before insert on video
---for each row begin
---	select dept_seq.nextval
---	into :new.id
---	from dual;
---end;
---/
+
+create sequence video_seq;
+
+create or replace trigger video_pk_gen
+before insert on video
+for each row begin
+	select video_seq.nextval
+  into :new.id
+	from dual;
+end;
+/
+
 
 create table Fichier (
 	chemin				varchar2(50),
