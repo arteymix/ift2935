@@ -156,6 +156,58 @@ begin
 end;
 /
 
+create procedure insertFilm(
+  de in video.description%type,
+  ti in video.titre%type,
+  da in video.dateSortie%type,
+  ge in video.genre%type,
+  nu in OeuvreCinematographique.numero%type,
+  se in OeuvreCinematographique.serie%type
+) is
+  id video.id%type;
+begin
+  insert into video(description, titre, dateSortie, genre) values(de, ti, da, ge);
+  select video_seq.currval into id from dual;
+  insert into oeuvreCinematographique values(id, nu, se);
+  insert into film values(id);
+  commit;
+end;
+/
+
+create procedure insertEmission(
+  de in video.description%type,
+  ti in video.titre%type,
+  da in video.dateSortie%type,
+  ge in video.genre%type,
+  nu in OeuvreCinematographique.numero%type,
+  se in OeuvreCinematographique.serie%type
+) is
+  id video.id%type;
+begin
+  insert into video(description, titre, dateSortie, genre) values(de, ti, da, ge);
+  select video_seq.currval into id from dual;
+  insert into oeuvreCinematographique values(id, nu, se);
+  insert into Emission values(id);
+  commit;
+end;
+/
+
+create procedure insertBandeAnnonce(
+  de in video.description%type,
+  ti in video.titre%type,
+  da in video.dateSortie%type,
+  ge in video.genre%type,
+  oi in OeuvreCinematographique.id%type
+) is
+  id video.id%type;
+begin
+  insert into video(description, titre, dateSortie, genre) values(de, ti, da, ge);
+  select video_seq.currval into id from dual;
+  insert into BandeAnnonce values(id, oi);
+  commit;
+end;
+/
+
 
 ---l'importance est un chiffre/100
 create table MotCle(

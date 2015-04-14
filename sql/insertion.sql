@@ -288,38 +288,80 @@ end;
 --
 -- EMISSION
 --
-insert into Video(description,titre,dateSortie,genre) values('Dans le Kentucky, Rick Grimes, un policier, se réveille à l''hôpital après plusieurs semaines de coma provoqué par une fusillade qui a mal tourné. Il découvre que le monde, ravagé par une épidémie, est envahi par les morts-vivants. Rick ne songe qu''à une chose : retrouver sa femme Lori et son fils Carl. Il se rend chez lui mais constate qu''ils ont disparu, puis rencontre Morgan et son fils Duane, qui se terrent dans leur maison. L''homme lui explique que la seule façon de tuer les zombies est de les atteindre à la tête. Il lui indique aussi qu''il existe un camp de réfugiés aux alentours d''Atlanta...', 'Passé décomposé', to_date('01/10/10', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(13, 1, 2);
-insert into Emission values(13);
+begin
+  insertEmission(
+    'Dans le Kentucky, Rick Grimes, un policier, se réveille à l''hôpital après plusieurs semaines de coma provoqué par une fusillade qui a mal tourné. Il découvre que le monde, ravagé par une épidémie, est envahi par les morts-vivants. Rick ne songe qu''à une chose : retrouver sa femme Lori et son fils Carl. Il se rend chez lui mais constate qu''ils ont disparu, puis rencontre Morgan et son fils Duane, qui se terrent dans leur maison. L''homme lui explique que la seule façon de tuer les zombies est de les atteindre à la tête. Il lui indique aussi qu''il existe un camp de réfugiés aux alentours d''Atlanta...',
+    'Passé décomposé',
+    to_date('01/10/10', 'DD/MM/YY'),
+    'Épouvante',
+    1,
+    2
+  );
 
-insert into Video(description,titre,dateSortie,genre) values('Rick parvient à s''extraire du char et rencontre un groupe de survivants avec le jeune Glenn, Andrea, Morales, T-Dog et Merle Dixon, un homme passablement raciste et énervé. Tous sont réfugiés dans un immeuble et se demandent comment en sortir. Les zombies tentent de prendre d''assaut le bâtiment. Rick est obligé d''attacher Dixon pour le calmer car son attitude envers T-Dog envenime la situation. Le petit groupe pense d''abord à s''échapper par les égouts. Dans le camp de réfugiés à l''extérieur de la ville, Lori et Shane deviennent amants...', 'Tripes', to_date('07/11/10', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(14, 2, 2);
-insert into Emission values(14);
+  insertEmission(
+    'Rick parvient à s''extraire du char et rencontre un groupe de survivants avec le jeune Glenn, Andrea, Morales, T-Dog et Merle Dixon, un homme passablement raciste et énervé. Tous sont réfugiés dans un immeuble et se demandent comment en sortir. Les zombies tentent de prendre d''assaut le bâtiment. Rick est obligé d''attacher Dixon pour le calmer car son attitude envers T-Dog envenime la situation. Le petit groupe pense d''abord à s''échapper par les égouts. Dans le camp de réfugiés à l''extérieur de la ville, Lori et Shane deviennent amants...',
+    'Tripes',
+    to_date('07/11/10', 'DD/MM/YY'),
+    'Épouvante',
+    2,
+    2
+  );
 
-insert into Video(description,titre,dateSortie,genre) values('Rick, Glenn et le petit groupe de survivants parviennent à rejoindre le camp de réfugiés situé dans les montagnes aux alentours d''Atlanta. Rick retrouve sa femme Lori et son fils Carl. Son ancien coéquipier, Shane, qui était devenu l''amant de Lori, est forcément surpris du retour de Rick. Le cas de Merle Dixon fait débat : fallait-il le laisser attaché sur le toit sans défense ? La découverte d''un mort-vivant aux abords du camp et le retour de Daryl Dixon, le frère de Merle, précipitent les choses : Rick décide de retourner à Atlanta pour délivrer Merle et récupérer des armes et des munitions...', 'Les grenouilles', to_date('14/11/10', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(15, 3, 2);
-insert into Emission values(15);
+  insertEmission(
+    'Rick, Glenn et le petit groupe de survivants parviennent à rejoindre le camp de réfugiés situé dans les montagnes aux alentours d''Atlanta. Rick retrouve sa femme Lori et son fils Carl. Son ancien coéquipier, Shane, qui était devenu l''amant de Lori, est forcément surpris du retour de Rick. Le cas de Merle Dixon fait débat : fallait-il le laisser attaché sur le toit sans défense ? La découverte d''un mort-vivant aux abords du camp et le retour de Daryl Dixon, le frère de Merle, précipitent les choses : Rick décide de retourner à Atlanta pour délivrer Merle et récupérer des armes et des munitions...',
+    'Les grenouilles',
+    to_date('14/11/10', 'DD/MM/YY'),
+    'Épouvante',
+    3,
+    2
+  );
 
-insert into Video(description,titre,dateSortie,genre) values('A Atlanta, Rick, Glenn, T-Dog et Daryl cherchent Merle, qui a réussi à s''enfuir malgré sa main coupée. En voulant récupérer le sac d''armes, ils rencontrent un autre groupe de survivants, qui eux aussi veulent s''emparer des munitions. Le gang capture Glenn et les deux parties vont devoir négocier. Au camp en dehors de la ville, alors qu''Andrea s''est rapprochée de sa soeur Amy, Jim montre des signes d''inquiétude. L''homme ne cesse de creuser des tombes et semble perdre toute notion de la réalité. Les autres habitants du camp décident de l''attacher de manière préventive...', 'Le gang', to_date('21/11/10', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(16, 4, 2);
-insert into Emission values(16);
+  insertEmission(
+    'A Atlanta, Rick, Glenn, T-Dog et Daryl cherchent Merle, qui a réussi à s''enfuir malgré sa main coupée. En voulant récupérer le sac d''armes, ils rencontrent un autre groupe de survivants, qui eux aussi veulent s''emparer des munitions. Le gang capture Glenn et les deux parties vont devoir négocier. Au camp en dehors de la ville, alors qu''Andrea s''est rapprochée de sa soeur Amy, Jim montre des signes d''inquiétude. L''homme ne cesse de creuser des tombes et semble perdre toute notion de la réalité. Les autres habitants du camp décident de l''attacher de manière préventive...',
+    'Le gang',
+    to_date('21/11/10', 'DD/MM/YY'),
+    'Épouvante',
+    4,
+    2
+  );
 
-insert into Video(description,titre,dateSortie,genre) values('Après l''attaque du campement, tous les survivants sont résignés et abattus. Andrea pleure sa soeur Amy, Shane reproche à Rick d''être parti à Atlanta et d''avoir laissé le camp sans renfort, mais c''est surtout l''état de santé de Jim qui inquiète. Il a été mordu par un mort-vivant et sa santé se dégrade. Rick cherche du soutien chez Lori et propose au groupe de quitter les montagnes pour essayer de trouver le centre de soins et de prévention des maladies infectieuses. Il pense que l''endroit est encore protégé par l''armée. Tous prennent la route alors que Jim est de plus en plus fiévreux...', 'Wildfire', to_date('28/11/10', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(17, 5, 2);
-insert into Emission values(17);
+  insertEmission(
+    'Après l''attaque du campement, tous les survivants sont résignés et abattus. Andrea pleure sa soeur Amy, Shane reproche à Rick d''être parti à Atlanta et d''avoir laissé le camp sans renfort, mais c''est surtout l''état de santé de Jim qui inquiète. Il a été mordu par un mort-vivant et sa santé se dégrade. Rick cherche du soutien chez Lori et propose au groupe de quitter les montagnes pour essayer de trouver le centre de soins et de prévention des maladies infectieuses. Il pense que l''endroit est encore protégé par l''armée. Tous prennent la route alors que Jim est de plus en plus fiévreux...',
+    'Wildfire',
+    to_date('28/11/10', 'DD/MM/YY'),
+    'Épouvante',
+    5,
+    2
+  );
 
-insert into Video(description,titre,dateSortie,genre) values('Rick et les survivants pénètrent dans le centre de soins et de recherche sur les maladies infectieuses. Là, le docteur Edwin Jenner les accueille. Il est le seul scientifique présent et vit seul depuis plusieurs mois. Après avoir profité d''un repos auquel ils n''avaient plus goûté depuis longtemps, Rick, Shane et le groupe se posent beaucoup de questions sur ce qui s''est passé dans le centre. Le docteur Jenner leur explique l''état le plus avancé de la recherche sur ce qui transforme les morts en zombies. Mais la situation n''est pas aussi idéale qu''il n''y paraît...', 'Sujet-test 19', to_date('05/12/10', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(18, 6, 2);
-insert into Emission values(18);
+  insertEmission(
+    'Rick et les survivants pénètrent dans le centre de soins et de recherche sur les maladies infectieuses. Là, le docteur Edwin Jenner les accueille. Il est le seul scientifique présent et vit seul depuis plusieurs mois. Après avoir profité d''un repos auquel ils n''avaient plus goûté depuis longtemps, Rick, Shane et le groupe se posent beaucoup de questions sur ce qui s''est passé dans le centre. Le docteur Jenner leur explique l''état le plus avancé de la recherche sur ce qui transforme les morts en zombies. Mais la situation n''est pas aussi idéale qu''il n''y paraît...',
+    'Sujet-test 19',
+    to_date('05/12/10', 'DD/MM/YY'),
+    'Épouvante',
+    6,
+    2
+  );
 
-insert into Video(description,titre,dateSortie,genre) values('Les survivants se retrouvent bloqués sur une route envahie par des carcasses de voitures. Ils décident d''en profiter pour siphonner les réservoirs. C''est alors qu''ils sont surpris par un groupe de zombies. Dale tente de superviser les opérations du haut du camion, tandis que Sophia, imprudente, est poursuivie par un groupe de zombies tenaces. Rick parvient à tuer les créatures qui menaçaient Sophia mais la jeune fille disparaît. Rick et les autres se lancent à sa poursuite...', 'Ce qui nous attend', to_date('16/10/11', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(19, 1, 3);
-insert into Emission values(19);
+  insertEmission(
+    'Les survivants se retrouvent bloqués sur une route envahie par des carcasses de voitures. Ils décident d''en profiter pour siphonner les réservoirs. C''est alors qu''ils sont surpris par un groupe de zombies. Dale tente de superviser les opérations du haut du camion, tandis que Sophia, imprudente, est poursuivie par un groupe de zombies tenaces. Rick parvient à tuer les créatures qui menaçaient Sophia mais la jeune fille disparaît. Rick et les autres se lancent à sa poursuite...',
+    'Ce qui nous attend',
+    to_date('16/10/11', 'DD/MM/YY'),
+    'Épouvante',
+    1,
+    3
+  );
 
-insert into Video(description,titre,dateSortie,genre) values('A Port-Réal, Tyrion Lannister connaît bien les codes de la Cour royale et use de toute son intelligence pour étendre son influence. Modéré et stratège, il veut limiter les accès de cruauté du roi Joffrey, parfois imprévisible. De son côté, Catelyn Stark s''emploie à négocier une paix entre Stannis et Renly Baratheon, indispensable dans le conflit qui oppose les Stark aux Lannister. Toujours sur la route avec ses quelques fidèles, Daenerys Targaryen arrive à la grande cité de Qarth et espère y trouver refuge...', 'La Cité de Qarth', to_date('22/04/12', 'DD/MM/YY'), 'Fantastique');
-insert into OeuvreCinematographique values(20, 4, 3);
-insert into Emission values(20);
-
+  insertEmission(
+    'A Port-Réal, Tyrion Lannister connaît bien les codes de la Cour royale et use de toute son intelligence pour étendre son influence. Modéré et stratège, il veut limiter les accès de cruauté du roi Joffrey, parfois imprévisible. De son côté, Catelyn Stark s''emploie à négocier une paix entre Stannis et Renly Baratheon, indispensable dans le conflit qui oppose les Stark aux Lannister. Toujours sur la route avec ses quelques fidèles, Daenerys Targaryen arrive à la grande cité de Qarth et espère y trouver refuge...',
+    'La Cité de Qarth',
+    to_date('22/04/12', 'DD/MM/YY'),
+    'Fantastique',
+    4,
+    3
+  );
+end;
+/
 
 --
 -- FILM
