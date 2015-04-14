@@ -155,7 +155,9 @@ create table Cinema(
 	nom			varchar2(50) not null,
 	adresse		varchar2(200) not null,
 	telephone	varchar2(12),
-	email		varchar2(50)
+	email		varchar2(50),
+	constraint check_cinema_telephone check (REGEXP_LIKE(telephone,'^[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$')),
+	constraint check_cinema_email check (REGEXP_LIKE(email,'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$','I'))
 --
 );
 
@@ -204,7 +206,8 @@ create table Compte (
 	dateInscription	date,
 	idPerso			number(8) not null,
 --
-	constraint fkCompte_idPerso	foreign key (idPerso) references Personne(id)
+	constraint fkCompte_idPerso	foreign key (idPerso) references Personne(id),
+	constraint check_compte_telephone check (REGEXP_LIKE(telephone,'^[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$'))
 );
 
 create table Loue (
