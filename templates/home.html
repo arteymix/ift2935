@@ -74,7 +74,7 @@
               <h4 class="media-heading"><a href="{{ url_for('cinema', cinema_id=cinema[0]) }}">{{ cinema[1] }}</a></h4>
               <address>{{ cinema[2] }}</address>
               <p>{{ cinema[3] }}</p>
-              <a href="{{ cinema[4] }}">{{ cinema[4] }}</a>
+              <a href="mailto:{{ cinema[4] }}">{{ cinema[4] }}</a>
             </div>
           </div>
         {% endfor %}
