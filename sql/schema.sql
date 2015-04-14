@@ -157,9 +157,8 @@ create table Cinema(
 	telephone	varchar2(12),
 	email		varchar2(50),
 --
-	constraint check_cinema_telephone check (REGEXP_LIKE(telephone,'^[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$'))
---,	constraint check_cinema_email check (REGEXP_LIKE(email,'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$','I'))
---
+	constraint check_cinema_telephone check (REGEXP_LIKE(telephone,'^[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$')),
+	constraint check_cinema_email check (REGEXP_LIKE(email,'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$'))
 );
 
 create table Projette(
