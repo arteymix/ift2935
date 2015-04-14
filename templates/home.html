@@ -25,27 +25,7 @@
     </div>
   </hedaer>
   <div class="container">
-
-    <div class="row">
-      <h3>Tables de la base de donnée</h3>
-      <table class="table">
-        <tr>
-          {% for col in description %}
-          <th>{{ col }}</th>
-          {% endfor %}
-        </tr>
-        {% for table in tables %}
-        <tr>
-          {% for col in table %}
-          <td>{{ col }}</td>
-          {% endfor %}
-        </tr>
-        {% endfor %}
-      </table>
-    </div>
-
     {% block content %}{% endblock %}
-
   </div>
   <footer class="container">
     <div class="row">

@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+
+{% block content %}
+    
+    <table class="table">
+
+        <tr>
+            {% for header in cursor.description %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+
+        {% for row in cursor %}
+        <tr><td>{{ row }}</td></tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

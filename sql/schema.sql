@@ -82,8 +82,8 @@ create table Video(
 create table Fichier (
 	chemin				varchar2(50),
 	prix				decimal(5,2) not null,
-	nbTelechargement	number(10) not null default(0),
-	nbVisionnement		number(10) not null default(0),
+	nbTelechargement	number(10) default 0 not null,
+	nbVisionnement		number(10) default 0 not null,
 	dateAcquisition		date,
 	estArchive			number(1) not null, -- boolean
 	noVideo				number(6),
