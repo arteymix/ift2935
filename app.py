@@ -19,7 +19,9 @@ db = connect(**app.config['database'])
 
 @app.route('/')
 def home():
-    return render_template('home.html', cinemas=db.cursor().execute('select * from cinema'))
+    cinemas = db.cursor()
+    cinemas.execute('select * from cinema where id in (select noCinema from projette)')
+    return render_template('home.html', cinemas=cinemas)
 
 @app.route('/register')
 def register():
