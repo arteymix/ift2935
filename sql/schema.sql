@@ -1,4 +1,4 @@
----Le sexe est un varchar2(10) et est accompagne dans chaque table par une contrainte de domaine
+t---Le sexe est un varchar2(10) et est accompagne dans chaque table par une contrainte de domaine
 ---Creer un type sexe pourrait eviter toutes les redondances, mais je nai pas ete capable de le faire
 ---Meme strugle pour les genre des vidéos et cie et les contraintes genreDomaineXXX
 ---Les attributs heure et adresse et sont aussi "problematiques". Presentement, ce sont que des varchar2(4) et varchar2(200). Au pire, on se dit qu'on est capable de rentrer des bonnes données
@@ -154,8 +154,9 @@ create table Cinema(
 	id			number(5) primary key,
 	nom			varchar2(50) not null,
 	adresse		varchar2(200) not null,
-	telephone	number(10),
+	telephone	varchar2(12),
 	email		varchar2(50)
+--
 );
 
 create table Projette(
@@ -199,7 +200,7 @@ create table Compte (
 	nomUtilisateur	varchar2(55) primary key,
 	motDePasse		varchar2(35) not null,
 	adresse			varchar2(200),
-	telephone		number(10),
+	telephone		varchar(12),
 	dateInscription	date,
 	idPerso			number(8) not null,
 --
