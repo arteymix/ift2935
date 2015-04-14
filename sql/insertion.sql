@@ -493,7 +493,6 @@ insert into Fichier values('\\server0x5f9\main\save\walking_dead/sa3_bande_annon
 insert into Fichier values('\\server0x5f9\main\save\walking_dead/sa4_bande_annonce', 0, 0001544643, 0001544643, to_date('01/03/12', 'DD/MM/YY'), 1, 34);
 insert into Fichier values('\\server0x5f9\main\save\walking_dead/sa5_bande_annonce', 0, 0002844643, 0002844643, to_date('01/03/13', 'DD/MM/YY'), 1, 35);
 insert into Fichier values('\\server0x5f9\main\save\walking_dead/sa1_unofficial_trailer', 0, 0001255673, 0001255673, to_date('01/03/09', 'DD/MM/YY'), 1, 36);
-=======
 insert into Fichier values('\\server0x5f9\main\save\very_bad_trip1', 1.99, 0001000378, 0001478694, to_date('24/10/09', 'DD/MM/YY'), 1, 21);
 insert into Fichier values('\\server0x5f9\main\save\very_bad_trip2', 2.49, 0000308600, 0003184578, to_date('25/10/11', 'DD/MM/YY'), 1, 22);
 insert into Fichier values('\\server0x5f9\main\save\very_bad_trip3', 3.99, 0001470008, 0005689504, to_date('29/10/13', 'DD/MM/YY'), 1, 23);
@@ -505,7 +504,6 @@ insert into Fichier values('\\server0x5f9\main\save\chevalier_noir', 2.99, 00007
 insert into Fichier values('\\server0x5f9\main\save\la_liste_de_schindler', 1.99, 0000169752, 000690075, to_date('02/09/10', 'DD/MM/YY'), 1, 29);
 insert into Fichier values('\\server0x5f9\main\save\walking_dead/sa1/ep1', 0.99, 0000034967, 000024561, to_date('01/03/14', 'DD/MM/YY'), 1, 13);
 
->>>>>>> 44c8f2127cdc2961eb36a73b0dc9c6dee035c511
 
 ---insert into Compte values('nomUti', 'password', 'adresse', 5141234567, dateInscription, 10000001);
 insert into Compte values('e.trottier', 'abc1234', '47 de la Brunante', '514-123-4567', to_date('06/03/10', 'DD/MM/YY'), 10000001);
