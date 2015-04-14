@@ -423,15 +423,15 @@ end;
 
 
 ---insert into Projette values(12345 idCinema, 123456 idVideo, todate projection, 'xx:xx' heure);
-insert into Projette values(00001, 21, to_date('19/04/15', 'DD/MM/YY'), '12:00');
-insert into Projette values(00001, 22, to_date('19/04/15', 'DD/MM/YY'), '15:00');
-insert into Projette values(00001, 23, to_date('19/03/15', 'DD/MM/YY'), '17:00');
-insert into Projette values(00002, 21, to_date('19/03/15', 'DD/MM/YY'), '19:00');
-insert into Projette values(00005, 26, to_date('19/05/15', 'DD/MM/YY'), '15:35');
-insert into Projette values(00006, 28, to_date('19/04/15', 'DD/MM/YY'), '21:55');
-insert into Projette values(00007, 29, to_date('19/04/15', 'DD/MM/YY'), '20:15');
-insert into Projette values(00009, 29, to_date('19/04/15', 'DD/MM/YY'), '16:00');
-insert into Projette values(00009, 29, to_date('19/04/15', 'DD/MM/YY'), '16:20');
+insert into Projette values(00001, 21, to_date('19/04/15-12:00', 'DD/MM/YY-HH24:MI'));
+insert into Projette values(00001, 22, to_date('19/04/15-15:00', 'DD/MM/YY-HH24:MI'));
+insert into Projette values(00001, 23, to_date('19/03/15-17:00', 'DD/MM/YY-HH24:MI'));
+insert into Projette values(00002, 21, to_date('19/03/15-19:00', 'DD/MM/YY-HH24:MI'));
+insert into Projette values(00005, 26, to_date('19/05/15-15:35', 'DD/MM/YY-HH24:MI'));
+insert into Projette values(00006, 28, to_date('19/04/15-21:55', 'DD/MM/YY-HH24:MI'));
+insert into Projette values(00007, 29, to_date('19/04/15-20:15', 'DD/MM/YY-HH24:MI'));
+insert into Projette values(00009, 29, to_date('19/04/15-16:00', 'DD/MM/YY-HH24:MI'));
+insert into Projette values(00009, 29, to_date('19/04/15-16:20', 'DD/MM/YY-HH24:MI'));
 
 
 
@@ -519,18 +519,18 @@ insert into Compte values('argamedon_jellybean', 'i6g8f5bb3', '239 avenue Mont-R
 
 
 ---insert into Loue values('nomUtili', 'chemin', dateLocation, heureLocation 'xx:xx', xxx.xx prix);
-insert into Loue values('e.trottier', '\\server0x5f9\main\save\very_bad_trip1', to_date('06/03/14', 'DD/MM/YY'), '10:06', 1.99);
-insert into Loue values('TheBest13', '\\server0x5f9\main\save\walking_dead/sa1/ep1', to_date('02/03/14', 'DD/MM/YY'), '22:29', 0.99);
-insert into Loue values('aerodynamic22', '\\server0x5f9\main\save\la_liste_de_schindler', to_date('03/09/10', 'DD/MM/YY'), '17:44', 1.99);
-insert into Loue values('aerodynamic22', '\\server0x5f9\main\save\chevalier_noir', to_date('14/12/13', 'DD/MM/YY'), '10:12', 2.99);
-insert into Loue values('aerodynamic22', '\\server0x5f9\main\save\la_ligne_verte', to_date('14/12/13', 'DD/MM/YY'), '12:48', 1.99);
-insert into Loue values('account1543', '\\server0x5f9\main\save\very_bad_trip1', to_date('01/11/13', 'DD/MM/YY'), '10:00', 1.99);
-insert into Loue values('account1543', '\\server0x5f9\main\save\very_bad_trip1', to_date('01/11/13', 'DD/MM/YY'), '13:05', 2.49);
-insert into Loue values('account1543', '\\server0x5f9\main\save\very_bad_trip1', to_date('01/11/13', 'DD/MM/YY'), '17:12', 2.99);
-insert into Loue values('emile222', '\\server0x5f9\main\save\forrest_gump', to_date('02/12/99', 'DD/MM/YY'), '23:58', 4.99);
-insert into Loue values('arnaudtse', '\\server0x5f9\main\save\forrest_gump', to_date('01/11/14', 'DD/MM/YY'), '12:52', 3.99);
-insert into Loue values('internaute101', '\\server0x5f9\main\save\forrest_gump', to_date('14/04/14', 'DD/MM/YY'), '15:34', 2.99);
-insert into Loue values('internaute101', '\\server0x5f9\main\save\django_unchained', to_date('12/02/14', 'DD/MM/YY'), '21:34', 4.09);
+insert into Loue values('e.trottier', '\\server0x5f9\main\save\very_bad_trip1', to_date('06/03/14-10:06', 'DD/MM/YY-HH24:MI'), 1.99);
+insert into Loue values('TheBest13', '\\server0x5f9\main\save\walking_dead/sa1/ep1', to_date('02/03/14-22:29', 'DD/MM/YY-HH24:MI'), 0.99);
+insert into Loue values('aerodynamic22', '\\server0x5f9\main\save\la_liste_de_schindler', to_date('03/09/10-17:44', 'DD/MM/YY-HH24:MI'), 1.99);
+insert into Loue values('aerodynamic22', '\\server0x5f9\main\save\chevalier_noir', to_date('14/12/13-10:12', 'DD/MM/YY-HH24:MI'), 2.99);
+insert into Loue values('aerodynamic22', '\\server0x5f9\main\save\la_ligne_verte', to_date('14/12/13-12:48', 'DD/MM/YY-HH24:MI'), 1.99);
+insert into Loue values('account1543', '\\server0x5f9\main\save\very_bad_trip1', to_date('01/11/13-10:00', 'DD/MM/YY-HH24:MI'), 1.99);
+insert into Loue values('account1543', '\\server0x5f9\main\save\very_bad_trip1', to_date('01/11/13-13:05', 'DD/MM/YY-HH24:MI'), 2.49);
+insert into Loue values('account1543', '\\server0x5f9\main\save\very_bad_trip1', to_date('01/11/13-17:12', 'DD/MM/YY-HH24:MI'), 2.99);
+insert into Loue values('emile222', '\\server0x5f9\main\save\forrest_gump', to_date('02/12/99-23:58', 'DD/MM/YY-HH24:MI'), 4.99);
+insert into Loue values('arnaudtse', '\\server0x5f9\main\save\forrest_gump', to_date('01/11/14-12:52', 'DD/MM/YY-HH24:MI'), 3.99);
+insert into Loue values('internaute101', '\\server0x5f9\main\save\forrest_gump', to_date('14/04/14-15:34', 'DD/MM/YY-HH24:MI'), 2.99);
+insert into Loue values('internaute101', '\\server0x5f9\main\save\django_unchained', to_date('12/02/14-21:34', 'DD/MM/YY-HH24:MI'), 4.09);
 
 
 ---insert into APourRole(12345678 idActeur, 123456 noVideo, 'nomPersonnage');

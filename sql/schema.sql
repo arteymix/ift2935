@@ -238,11 +238,9 @@ create table Cinema(
 create table Projette(
 	noCinema        number(5),
 	noVideo         number(6),
-	-- todo: utiliser un datetime
 	dateProjection  date,
-	heureProjection varchar2(5),
 --
-	constraint pkProjette primary key (noCinema, noVideo, dateProjection, heureProjection),
+	constraint pkProjette primary key (noCinema, noVideo, dateProjection),
 	constraint fkProjette_noCinema foreign key (noCinema) references Cinema(id),
 	constraint fkProjette_noVideo foreign key (noVideo) references OeuvreCinematographique(id)
 );
@@ -291,10 +289,9 @@ create table Loue (
 	nomUtilisateur	varchar2(15),
 	chemin			varchar2(50),
 	dateLocation	date,
-	heureLocation	varchar2(5),
 	prix			decimal(5,2) not null,
 --
-	constraint pkLoue primary key (nomUtilisateur, chemin, dateLocation, heureLocation),
+	constraint pkLoue primary key (nomUtilisateur, chemin, dateLocation),
 	constraint fk1Loue foreign key (nomUtilisateur) references Compte(nomUtilisateur),
 	constraint fk2Loue foreign key (chemin) references Fichier(chemin),
 	constraint prixLocationPositif check (prix >= 0)
