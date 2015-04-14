@@ -24,9 +24,11 @@
       </div>
     </div>
     <ul class="nav nav-pills">
-    {% for name in ['test', 'test', 'test'] %}
-      <li><a href="{{ url_for('custom_request', name=name) }}">{{ name }}</a></li>
-    {% endfor %}
+      <li><a href="{{ url_for('custom_request', name='best-review') }}">Meilleure revue</a></li>
+      <li><a href="{{ url_for('custom_request', name='last-seen-video') }}">Derniers films vus</a></li>
+      <li><a href="{{ url_for('custom_request', name='most-renting') }}">Les plus loués</a></li>
+      <li><a href="{{ url_for('custom_request', name='ten-most-viewed-video') }}">Les 10 films les plus vus</a></li>
+      <li><a href="{{ url_for('custom_request', name='film-by-realisateur-of-last-seen-video') }}">Les derniers films vus par réalisateur</a></li>
     </ul>
   </hedaer>
   <div class="container">

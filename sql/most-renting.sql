@@ -1,2 +1,6 @@
 -- Select the top 10 most located movie and print their title.
-Select titre FROM Video where noVideo in (SELECT noVideo from ((SELECT Count(*) as c, chemin as d FROM Loue GROUP BY chemin ORDER BY c LIMIT 10) join Fichier on Fichier.chemin = d));
+
+select titre, count(*) from Loue
+    natural join Video -- jointure sur le chemin
+    where rownum <= 10
+    group by chemin, titre
