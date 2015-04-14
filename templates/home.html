@@ -4,7 +4,7 @@
     <title>Netflix 2</title>
     <link rel="stylesheet" href="//bootswatch.com/sandstone/bootstrap.min.css">
   </head>
-  <body>
+  <body style="padding: 120px 0 120px 0">
   <header class="container">
     <div class="row">
       <div class="col-md-8">
@@ -23,9 +23,9 @@
         </form>
       </div>
     </div>
-    <ul class="nav">
-    {% for name in ['', '', ''] %}
-        <li><a href="{{ url_for('custom_request', name=name) }}"></a></li>
+    <ul class="nav nav-pills">
+    {% for name in ['test', 'test', 'test'] %}
+      <li><a href="{{ url_for('custom_request', name=name) }}">{{ name }}</a></li>
     {% endfor %}
     </ul>
   </hedaer>
@@ -35,9 +35,10 @@
   <footer class="container">
     <div class="row">
       <div class="col-md-4">
-        <h4><a href="">Films vus récemment</a></h4>
-        <ul>
-        </ul>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
       </div>
     </div>
   </footer>
