@@ -5,5 +5,5 @@ select * from
         natural join Fichier -- jointure sur le chemin
         join Video on Video.id = Fichier.noVideo
         group by noVideo, titre
-        order by locations)
+        order by locations desc)
     where rownum <= 10

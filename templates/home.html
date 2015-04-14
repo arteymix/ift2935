@@ -41,7 +41,7 @@
             'bande-annonce-des-series-epouvante': 'Bandes-annonces des séries d\'épouvantes (4 tables)',
             'ten-most-viewed-video': '10 vidéos les plus vus (2 tables)' }.items()
             %}
-          <li><a href="{{ url_for('custom_request', name=k) }}">{{ v }}</a></li>
+            <li class="{% if name == k %}active{% endif %}"><a href="{{ url_for('custom_request', name=k) }}">{{ v }}</a></li>
           {% endfor %}
         </ul>
       </div>
