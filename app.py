@@ -19,7 +19,7 @@ db = connect(**app.config['database'])
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', cinemas=db.cursor().execute('select * from cinema'))
 
 @app.route('/search')
 def search():
@@ -33,7 +33,7 @@ def custom_request(name):
     with open(os.path.join('sql', name) + '.sql') as f:
         cursor = db.cursor()
         cursor.execute(f.read())
-    return render_template('request.html', cursor=cursor)
+    return render_template('request.html', name=name, cursor=cursor)
 
 @app.route('/preferences')
 def preferences():
