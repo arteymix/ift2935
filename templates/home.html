@@ -24,16 +24,38 @@
         </form>
       </div>
     </div>
-    <ul class="nav nav-pills">
-      <li><a href="{{ url_for('custom_request', name='best-review') }}">Meilleure revue</a></li>
-      <li><a href="{{ url_for('custom_request', name='last-seen-video') }}">Derniers films vus</a></li>
-      <li><a href="{{ url_for('custom_request', name='most-renting') }}">Les plus loués</a></li>
-      <li><a href="{{ url_for('custom_request', name='ten-most-viewed-video') }}">Les 10 films les plus vus</a></li>
-      <li><a href="{{ url_for('custom_request', name='film-by-realisateur-of-last-seen-video') }}">Les derniers films vus par réalisateur</a></li>
-      <li><a href="{{ url_for('custom_request', name='cinema-projet') }}">Projection de George Clooney</a></li>
-      <li><a href="{{ url_for('custom_request', name='films-attendus') }}">Films attendus</a></li>
-      <li><a href="{{ url_for('custom_request', name='film-by-realisateur-of-last-seen-video') }}">Derniers films vus par réalisateurs</a></li>
-    </ul>
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="nav nav-pills">
+          <li><a href="{{ url_for('custom_request', name='best-review') }}">Meilleure revue</a></li>
+          <li><a href="{{ url_for('custom_request', name='last-seen-video') }}">Derniers films vus</a></li>
+          <li><a href="{{ url_for('custom_request', name='most-renting') }}">Les plus loués</a></li>
+          <li><a href="{{ url_for('custom_request', name='ten-most-viewed-video') }}">Les 10 films les plus vus</a></li>
+          <li><a href="{{ url_for('custom_request', name='film-by-realisateur-of-last-seen-video') }}">Les derniers films vus par réalisateur</a></li>
+          <li><a href="{{ url_for('custom_request', name='cinema-projet') }}">Projection de George Clooney</a></li>
+          <li><a href="{{ url_for('custom_request', name='films-attendus') }}">Films attendus</a></li>
+          <li><a href="{{ url_for('custom_request', name='film-by-realisateur-of-last-seen-video') }}">Derniers films vus par réalisateurs</a></li>
+          <li><a href="{{ url_for('custom_request', name='george-clooney-movies') }}">Films de George Clooney</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        {% if 'compte' in session %}
+        <p class="text-right">
+          Connecté en tant que Émile Trottier
+          <a href="{{ url_for('logout') }}">Déconnexion</a>
+        </p>
+        {% else %}
+        <h3>Authentification</h3>
+        <form method="post" action="{{ url_for('login') }}">
+        <input name="username" placeholder="Nom d'utilisateur"
+        class="form-control">
+        <input name="password" type="password" placeholder="Mot de passe"
+        class="form-control">
+        <button class="btn btn-primary" type="submit">Connexion</button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
   </hedaer>
   <div class="container">
     {% block content %}
@@ -42,7 +64,7 @@
         {% for cinema in cinemas %}
           <div class="media pull-left col-md-4">
             <div class="media-body">
-              <h4 class="media-heading">{{ cinema[1] }}</h4>
+              <h4 class="media-heading"><a href="{{ url_for('cinema', cinema_id=cinema[0]) }}">{{ cinema[1] }}</a></h4>
               <address>{{ cinema[2] }}</address>
               <p>{{ cinema[3] }}</p>
               <a href="{{ cinema[4] }}">{{ cinema[4] }}</a>
