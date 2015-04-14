@@ -34,7 +34,7 @@ DROP table Article;
 
 DROP table Acteur;
 DROP table Realisateur;
-DROP table Profesionnel;
+DROP table Professionnel;
 DROP table Journaliste;
 DROP table Compte;
 DROP table Personne;
@@ -43,22 +43,19 @@ create table Personne(
 	id            number(8) primary key,
 	prenom        varchar2(30) not null,
 	nom           varchar2(30) not null,
-	sexe          varchar2(10),
+	sexe          varchar2(10), -- queer :)
 	dateNaissance date not null,
-	dateDeces     date,
-	constraint sexeDomainePersonne check (sexe in('homme', 'femme', 'inconnu','cache'))
+	dateDeces     date
 );
 
 create table Journaliste (
 	id          number(8) primary key,
-	personne_id number(8) not null references Personne (id),
 --
 	constraint fkJournaliste foreign key (id) references Personne
 );
 
 create table Professionnel (
 	id          number(8) primary key,
-	personne_id number(8) references Personne (id),
 	biographie  varchar2(2000),
 --
 	constraint fkProfessionnel foreign key (id) references Personne
@@ -135,8 +132,8 @@ create table Serie (
 
 create table OeuvreCinematographique(
 	id		number(6) primary key,
+	numero	number(6) default null,
 	serie	number(6) default null,
-	numero	number(6) default(0),
 --
 	constraint fkOeuvreCin_id foreign key (id) references Video(id),
 	constraint fkOeuvreCin_serie foreign key (id) references Serie(id),
@@ -270,5 +267,7 @@ create table Realise(
 	constraint fkRealise_id foreign key (id) references Realisateur(id),
 	constraint fkRealise_video foreign key (noVideo) references Video(id)
 );
+
+
 
 -- création de vues
