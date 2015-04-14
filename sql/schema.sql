@@ -26,7 +26,7 @@ create table Journaliste (
 
 create table Professionnel (
 	id          number(8) primary key,
-	biographie  varchar2(2000),
+	biographie  varchar2(4000),
 --
 	constraint fkProfessionnel foreign key (id) references Personne
 );
@@ -50,8 +50,8 @@ create table Realisateur (
 --
 create table Video(
 	id			number(6) primary key,
-	description	varchar2(2000),
-	titre		varchar(25) not null,
+	description	varchar2(4000),
+	titre		varchar(100) not null,
 	dateSortie	date,
 	genre		varchar2(20),
 --
@@ -106,7 +106,7 @@ create table OeuvreCinematographique(
 	serie	number(6) default null,
 --
 	constraint fkOeuvreCin_id foreign key (id) references Video(id),
-	constraint fkOeuvreCin_serie foreign key (id) references Serie(id),
+	constraint fkOeuvreCin_serie foreign key (serie) references Serie(id),
 	constraint numeroDomaineOC check (numero >= 0)
 );
 

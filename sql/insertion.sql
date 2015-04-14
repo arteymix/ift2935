@@ -14,7 +14,7 @@ insert into Cinema values (00010, 'Ciné-Club de Laval', '475 boulevard de lAven
 insert into Cinema values (00011, 'Ciné-Club du Quartier', '15615 boulevard Gouin Ouest H9H5K8', 5146261616, 'cineclubduquartier@gmail.com');
 insert into Cinema values (00012, 'Cinéma 7 Valleyfield', '50 rue Dufferin J6S4W4', 4503711003, 'cinema7valleyfield@gmail.com');
 insert into Cinema values (00013, 'Cinéma Beloeil', '450 rue Serge Pépin J3G0C3', 4504646666, 'cinemabeloeil@gmail.com');
-insert into Cinema values (00014, '', '59 St-Denis', 1234567890, 'quartierlatin@gmail.com');
+insert into Cinema values (00014, 'Cinéma Quartier Latin', '59 St-Denis', 1234567890, 'quartierlatin@gmail.com');
 
 -- individus de base
 insert into Personne values(10000001, 'Sylvain', 'Trottier', 'homme', to_date('16/03/94', 'DD/MM/YY'), null);
@@ -34,7 +34,6 @@ insert into Personne values(10000014, 'Goliath', 'Couillard', 'homme', to_date('
 insert into Personne values(10000015, 'Ginette', 'Panaioti', 'femme', to_date('06/03/58', 'DD/MM/YY'), null);
 insert into Personne values(10000016, 'Hugo', 'Panaioti', 'homme', to_date('06/03/48', 'DD/MM/YY'), to_date('06/03/11', 'DD/MM/YY'));
 
-insert into Personne values(10000016, 'Vlad', 'Poutine', 'homme', to_date('06/03/68', 'DD/MM/YY'), null);
 insert into Personne values(10000017, 'Camille', 'Suivant', 'homme', to_date('13/05/87', 'DD/MM/YY'), null);
 insert into Personne values(10000018, 'Marsh', 'Morin', 'homme', to_date('05/09/89', 'DD/MM/YY'), null);
 insert into Personne values(10000019, 'Steve', 'Bolduc', 'homme', to_date('21/11/76', 'DD/MM/YY'), null);
@@ -48,7 +47,7 @@ insert into Personne values(10000026, 'Alec', 'Martinez', 'homme', to_date('07/0
 
 insert into Personne values(20000001, 'Alain', 'Tremblay', 'homme', to_date('07/07/90', 'DD/MM/YY'), null);
 insert into Personne values(20000002, 'Hugh', 'Jackman', 'homme', to_date('12/10/68', 'DD/MM/YY'), null);
-insert into Personne values(20000003, 'Andrew', 'Garfield', 'homme', to_date('20/08/83', 'DD/MM/YY'), null, );
+insert into Personne values(20000003, 'Andrew', 'Garfield', 'homme', to_date('20/08/83', 'DD/MM/YY'), null);
 insert into Personne values(20000004, 'Scarlett', 'Johansson', 'femme', to_date('22/11/84', 'DD/MM/YY'), null);
 insert into Personne values(20000005, 'Bradley', 'Cooper', 'homme', to_date('05/01/75', 'DD/MM/YY'), null);
 insert into Personne values(20000006, 'George', 'Clooney', 'homme', to_date('06/05/61', 'DD/MM/YY'), null);
@@ -85,6 +84,7 @@ insert into Professionnel values(20000002, 'Hugh Michael Jackman est un acteur a
 insert into Professionnel values(20000003, 'Andrew Garfield est un acteur britanico-américain, célèbre pour son rôle de Peter Parker, alias Spider-man, dans "la version Marc Webb" de la franchise. Né aux États-Unis à Los-Angeles le 20 août 1983, Andrew Garfield est élevé en Angleterre où il intègre le Central School of Speech and Drama dont il ressort diplômé en 2004. Il fait ses débuts sur les planches de théâtre, jouant dans Kes pour lequel il reçoit un prix en 2004. En 2007, on peut l’apercevoir dans Lions et agneaux mais c’est surtout sa prestation dans Boy A de John Crowley qui ne laisse personne indifférent. D’abord un téléfilm, Boy A se retrouve sur grand écran. Fort de cette expérience, on offre à Andrew Garfield des rôles divers et variés : il joue dans L’imaginarium du Dr Parnassus de Terry Gilliam en 2009 et est choisi pour intégrer le casting du dernier David Fincher, The social network. Il donne alors la réplique à Jesse Eisenberg, Roney Mara et Justin Timberlake.');
 insert into Professionnel values(20000004, 'Née à New York le 22 novembre 1984, Scarlett Ingrid Johansson est une actrice américaine d''ascendance danoise et polonaise célèbre pour ses rôles dans les films L''Homme qui murmurait à loreille des chevaux, Lost in translation, Match Point, Le prestige, Vicky, Cristina, Barcelona, Scoop, Deux soeurs pour un roi, Don Jon et pour son rôle de Black Widow (la veuve noire) dans les films Marvel tels que les franchises Iron Man, The Avengers ou encore Captain America.  Scarlett Johansson grandit dans une famille modeste, avec ses frères Adrian, Hunter son jumeau, Christian son demi-frère né du second mariage de son père, et sa sœur Vanessa. Son père, Karsten Johanson, est un architecte danois et sa mère Melanie Sloan, une productrice issue d''une famille judéo-polonaise du Bronx. Entre une mère cinéphile et un grand-père paternel, Ejner Johansson, scénariste et réalisateur, Scarlett Johansson fait ses débu s sur scène, à huit ans à peine, aux côtés de Gary Bitbol dans Sophistry. A dix ans, elle réussit à décrocher son premier rôle dans le film l''Irrésistible North de Rob Reiner (1994). Après avoir enchaîné plusieurs autres apparitions au cinéma, elle se fait enfin remarquer dans le mélodrame de Robert Redford : L''homme qui murmurait à loreille des chevaux, sorti en 1998. Interprétant la fille adolescente de Kristin Scott Thomas traumatisée par un accident de cheval, elle est récompensée d’un Young Star Awards par le magazine The Hollywood Reporter.');
 insert into Professionnel values(20000005, 'Bradley Cooper est un acteur américain né le 5 janvier 1975 à Philadelphie, en Pennsylvanie. Il est célèbre pour son rôle dans la saga Very Bad Trip mais aussi pour ses rôles dans les films LAgence Tous Risques, Hapiness Therapy, American Bluff et American Sniper. Né de l''union de Charlie et Gloria Cooper, Bradley Cooper a des origines italiennes et irlandaises. Il sort diplômé en Littérature Anglaise de la Georgetown University en 1997. Après un séjour en France, il s''inscrit au sein de l''Actors Studio de la New School University. Il fait ses débuts à la télévision dans le série populaire Sex and the City. Ce n''est quen 2001, quil tourne dans son premier long-métrage : Wet Hot American Summer. Il retourne ensuite sur le petit écran pour incarner le meilleur ami de Sydney dans la série Alias.');
+insert into Professionnel values(20000006, 'Acteur, producteur, scénariste et réalisateur, George Timothy Clooney est né le 6 mai 1961 à Lexington, au Kentucky. Star planétaire révélée par la série Urgences, il est un collaborateur privilégié de Steven Soderbergh (la trilogie Ocean, Hors d''ateinte, Solaris, The good german) et des frères Coen (O''Brother, Intolérable cruauté, Burn After Reading) mais est aussi célèbre pour ses rôles dans les films Les rois du désert, The Descendants et Gravity. Côté réalisation, on lui doit les films Confession d''un homme dangereux, Good night and good luck, Jeux de dupes, Les marches du pouvoir et The Monuments Men. La classe, l''allure, l''élégance, le charme, l''humour, le goût, l''intelligence et un certain bon sens moral et politique, voilà ce qui pourrait définir l''un des plus grands sex symbols d''Hollywood depuis le milieu des années 90 : George Clooney. Depuis la série Urgences où il fût révélé au grand public, il est devenu une star, du gros calibre, de ceux qu''on écoute, qu''on regarde et qu''on respecte, avec qui on est ami. Lui par contre n''en fait qu''à sa tête. Et s''il a bien commis quelques erreurs de parcours en sortant de ses barreaux cathodiques, depuis il fait ce que bon lui semble. Il travaille pour les projets qu''il aime ou pour ses amis, les cinéastes dont il se sent proche, quand il ne réalise par lui-même ses films ou alerte par le biais de l''ONU du génocide au Darfour.');
 insert into Professionnel values(20000007, 'Bérénice Bejo est une actrice Franco-argentine née le 7 juillet 1976 à Buenos Aires et célèbre pour ses rôles dans les films Meilleur espoir féminin, 24 heures de la vie d''une femme, Oss 117 : Le Caire, nid despions, The Artist et Le Passé. En couple avec le réalisateur Michel Hazanavicius, elle est la fille du cinéaste argentin Miguel Bejo. Dès son plus jeune âge, son père, Miguel Bejo, réalisateur, lui transmet sa passion pour le cinéma. Née à Bueno Aires, elle quitte l''Argentine avec sa famille en 1979 pour fuir la dictature militaire qui sévit depuis 1976 en Argentine et qui durera jusqu''en 1983. Bérénice Bejo arrive donc en France à trois ans et passe son enfance à Rambouillet. En France, son père décide de l''inscrire à des cours de théâtre, et elle débute sa carrière de comédienne à l''âge de 20 ans, en 1996, en apparaissant dans des courts-métrages comme Enceinte ou lesbienne et dans des téléfilms  omme Le juge est une femme, Julie Lescaut, mais surtout dans la série Un et Un font Six, dans laquelle elle interprète Sophie pendant 3 ans aux côtés de Brigitte Fossey et Pierre Arditi.');
 insert into Professionnel values(20000008, 'Lupita Nyong''o est une actrice Kényane né en 1983, on la connaît notamment pour le film 12 Years a slave. Lupita Nyong''o est native de Mexico où sa famille s''était installée avec le statut de réfugiés politiques à cause de la situation de son pays d''origine le Kenya. C''est d''ailleurs ce qui a décidé ses parents à lui donner un prénom mexicain. Son père Peter Anyang Nyono est un homme politique, plus précisément l''ancien Ministre de la Santé du Kenya, et sa cousine Isis a été décrite par le magazine Forbes comme l''une des femmes les plus importantes d''Afrique. Après un retour dans son pays d''origine, elle revient à 16 ans à Mexico avant de faire des études aux Etats-Unis. C''est là qu''elle se forme aux métiers du cinéma au Hampshire College. Après avoir décroché son diplôme elle travaille dans un premier temps derrière les caméras, au niveau de la production notamment. On peut citer entre autres The Cons ant Gardener. Par la suite c''est dans le pays de ses parents qu''elle se fait un nom en tant qu''actrice dans la série Shuga, puis en tant que réalisatrice en tournant In my genes, un documentaire sur le traitement des albinos. En 2014, retour aux États-Unis où c''est la consécration avec le drame 12 Years a Slave, acclamé par la critique, qui lui vaut l''Oscar du Meilleure second rôle féminin. Dans la foulée elle décroche un autre prix, dans un tout autre domaine cependant puisque le magazine People l''a désigne comme étant "la plus belle personne du monde". Elle succède ainsi à Gwyneth Paltrow, Julia Roberts et Tom Cruise.');
 insert into Professionnel values(20000009, 'Née le 1er janvier 1977 à Paris, Audrey Fleurot est une actrice française célèbre pour ses rôles dans les films Intouchables, Mais qui a re-tué Pamela Rose, La fleur de l''âge, Les reines du ring, Pop Redemption, ainsi que pour ses rôles dans les séries Kaamelott, Engrenages et Un Village Français. Les téléspectateurs français la connaissent surtout pour son interprétation peu conventionnelle de la Dame du Lac dans la série non moins conventionnelle, Kaamelott, diffusée sur M6 de 2004 à 2009. En parallèle, on la retrouve dans un rôle plus grave dans la série Engrenages, diffusée sur Canal+ et qui lui vaut la reconnaissance du public. Forte de cette nouvelle popularité, elle enchaîne alors les apparitions sur le petit écran (PJ, Diane femme flic...) et obtient de nouveaux rôles récurrents dans Equipe médicale d''urgence dès 2006 ou encore Un village français dès 2008. Cette notoriété lui ouvre également les portes du monde du cinéma, et en 2007 elle fait ses premiers pas à l''écran sous la houlette de Michael Cohen pour son film Les Deux mondes. Toutefois, il faut attendre l''année 2011 pour la retrouver dans les salles obscures, son calendrier étant déjà très chargé en raison de ses nombreux rôles à la télévision.');
@@ -114,8 +114,8 @@ Elle passe ensuite à la vidéo et réalise de courts-métrages. Son plus célè
 En 2006, elle est sollicitée pour réaliser un court-métrage qui s’inscrit dans le film collectif Destricted. Elle y réalise Death Valley. C’est donc en toute logique de Sam Taylor-Wood passe à la réalisation de son premier long-métrage, un biopic consacré aux jeunes années de John Lennon, Nowhere boy en 2009. Elle prend ensuite la tête du film 50 nuances de Grey, adaptation du roman à succès.');
 insert into Professionnel values(20000020, 'Sophie Danièle Sylvie Maupu, connue sous le nom de Sophie Marceau, est une actrice et réalisatrice française née le 17 novembre 1966 à Paris. Elle est célèbre pour ses rôles dans les films La Boum, Police, L''Etudiante, La fille de D''Artagnan, Braveheart, Le Monde ne suffit pas, Anthony Zimmer, LOL ou encore Un bonheur n''arrive jamais seul.
 Aujourd’hui, on ne peut pas parler du cinéma français sans évoquer la splendide Sophie Marceau. Depuis ses débuts remarqués dans La Boum de Claude Pinoteau, où elle incarne la charismatique Vic – César du meilleur espoir féminin en 1983 - Sophie Marceau n’a jamais cessé de tourner avec les réalisateurs français et internationaux. Mariée à 17 ans au réalisateur Andrzej Zulawski, de 26 ans son aîné, elle joue dans plusieurs de ses films, notamment dans L’amour braque en 1985, dans Mes nuits sont plus belles que vos jours (1989), La note bleue (1991) et La fidélité (2000). L’actrice a tourné dans des films très appréciés du public comme L''étudiante (1988) de Claude Pinoteau, La fille de d''Artagnan (1994) de Bertrand Tavernier, qui la révèle femme au fort caractère. Mais encouragée par son mari, elle s''oriente aussi vers un cinéma d''auteur en tournant pour des cinéastes comme Maurice Pialat avec Police (1985) où son partenaire à l’écran, Gérard Depardieu, lui donnait de vraies gifles, sous la volonté du réalisateur.');
-insert into Professionnel values(20000021, 'Acteur, producteur, scénariste et réalisateur, George Timothy Clooney est né le 6 mai 1961 à Lexington, au Kentucky. Star planétaire révélée par la série Urgences, il est un collaborateur privilégié de Steven Soderbergh (la trilogie Ocean, Hors d''ateinte, Solaris, The good german) et des frères Coen (O''Brother, Intolérable cruauté, Burn After Reading) mais est aussi célèbre pour ses rôles dans les films Les rois du désert, The Descendants et Gravity. Côté réalisation, on lui doit les films Confession d''un homme dangereux, Good night and good luck, Jeux de dupes, Les marches du pouvoir et The Monuments Men. La classe, l''allure, l''élégance, le charme, l''humour, le goût, l''intelligence et un certain bon sens moral et politique, voilà ce qui pourrait définir l''un des plus grands sex symbols d''Hollywood depuis le milieu des années 90 : George Clooney. Depuis la série Urgences où il fût révélé au grand public, il est devenu une star, du gros calibre, de ceux qu''on écoute, qu''on regarde et qu''on respecte, avec qui on est ami. Lui par contre n''en fait qu''à sa tête. Et s''il a bien commis quelques erreurs de parcours en sortant de ses barreaux cathodiques, depuis il fait ce que bon lui semble. Il travaille pour les projets qu''il aime ou pour ses amis, les cinéastes dont il se sent proche, quand il ne réalise par lui-même ses films ou alerte par le biais de l''ONU du génocide au Darfour.');
 
+insert into Realisateur values(20000006);
 insert into Realisateur values(20000011);
 insert into Realisateur values(20000012);
 insert into Realisateur values(20000013);
@@ -126,8 +126,6 @@ insert into Realisateur values(20000017);
 insert into Realisateur values(20000018);
 insert into Realisateur values(20000019);
 insert into Realisateur values(20000020);
-insert into Realisateur values(20000006);
-
 
 insert into Video values(300001, 'Après une apocalypse ayant transformé la quasi-totalité de la population en zombies, un groupe d''hommes et de femmes mené par l''officier Rick Grimes tente de survivre... Ensemble, ils vont devoir tant bien que mal faire face à ce nouveau monde devenu méconnaissable, à travers leur périple dans le Sud profond des États-Unis.', 'The Walking Dead', to_date('01/10/10', 'DD/MM/YY'), 'Épouvante');
 insert into Video values(300002, 'Saison 1 de la populaire émission The Walking Dead', 'The Walking Dead: saison 1', to_date('01/09/10', 'DD/MM/YY'), 'Épouvante');
@@ -175,10 +173,23 @@ insert into Video values(400007, 'Ceci est la bande-annonce officielle du film L
 insert into Video values(400008, 'Ceci est la bande-annonce officielle du film Mommy', 'Bande-Annonce - Mommy de Xavier Dolan', to_date('08/01/14', 'DD/MM/YY'), 'Épouvante');
 insert into Video values(400009, 'Ceci est la bande-annonce officielle du 1er épisode ("Passé Décomposé") de la 1re saison de The Walking Dead', 'Bande-Annonce - Walking Dead saison 1 épisode 1', to_date('01/01/10', 'DD/MM/YY'), 'Épouvante');
 
-
 --
 -- OEUVRE CINEMATOGRAPHIQUE
 --
+alter table serie disable constraint fkSerieNoVideo_id;
+
+insert into Serie values(300001);
+insert into Serie values(300002);
+insert into Serie values(300003);
+insert into Serie values(300004);
+insert into Serie values(300005);
+insert into Serie values(300006);
+insert into Serie values(300007);
+insert into Serie values(300008);
+insert into Serie values(300012);
+insert into Serie values(300009);
+insert into Serie values(300010);
+insert into Serie values(300011);
 
 insert into OeuvreCinematographique values(300001, null, null);
 insert into OeuvreCinematographique values(300002, 1, 300001);
@@ -214,18 +225,7 @@ insert into OeuvreCinematographique values(310008, null, null);
 insert into OeuvreCinematographique values(310009, null, null);
 insert into OeuvreCinematographique values(310010, null, null);
 
-insert into Serie values(300001);
-insert into Serie values(300002);
-insert into Serie values(300003);
-insert into Serie values(300004);
-insert into Serie values(300005);
-insert into Serie values(300006);
-insert into Serie values(300007);
-insert into Serie values(300008);
-insert into Serie values(300012);
-insert into Serie values(300009);
-insert into Serie values(300010);
-insert into Serie values(300011);
+alter table serie enable constraint fkSerieNoVideo_id;
 
 ---insert into Emission values(300012, 'description', 'titre', todate Sortie, 'genre', 12 numero dans la serie, 123456 num de la serie);
 insert into Emission values(300020);
@@ -302,12 +302,12 @@ insert into MotCle values('joker', 310007, 98);
 insert into MotCle values('Gotham', 310007, 100);
 insert into MotCle values('super-héros', 310007, 90);
 insert into MotCle values('police', 310007, 35);
-insert into MotCle values('zombies', 30001, 100);
-insert into MotCle values('zombies', 30002, 100);
-insert into MotCle values('zombies', 30003, 100);
-insert into MotCle values('zombies', 30004, 100);
-insert into MotCle values('zombies', 30005, 100);
-insert into MotCle values('zombies', 30006, 100);
+insert into MotCle values('zombies', 300001, 100);
+insert into MotCle values('zombies', 300002, 100);
+insert into MotCle values('zombies', 300003, 100);
+insert into MotCle values('zombies', 300004, 100);
+insert into MotCle values('zombies', 300005, 100);
+insert into MotCle values('zombies', 300006, 100);
 insert into MotCle values('juif', 310008, 95);
 insert into MotCle values('guerre', 310008, 90);
 insert into MotCle values('Auschwitz', 310008, 94);
