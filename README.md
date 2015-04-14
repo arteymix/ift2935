@@ -1,6 +1,9 @@
 IFT2935: Base de données
 ========================
 
+Installation
+------------
+
 Le projet est développé sur Oracle Database 11g, alors il vous faudra
 satisfaire quelques dépendances:
 
@@ -11,25 +14,24 @@ Les bases de données Oracle du DIRO roulent sous la version 10.2.0.1, alors
 vous pouvez installer la plus récente des 10.2 (10.2.0.5 à ma dernière
 consultation).
 
-Il faut s'enregistrer pour télécharger le client et ils fournissent un paquet
-`rpm`. C'est important d'installer les paquets:
+Il faut s'enregistrer pour télécharger le client et le SDK, Oracle fournit les
+archives `zip` suivantes:
 
- - `oracle-instantclient-basic` version `10.2.*`
- - `oracle-instantclient-devel` version `10.2.*`
+ - `basic` version `10.2.*`
+ - `sdk` version `10.2.*`
 
-Pour indiquer quel version d'Oracle utiliser, vous devez exporter la variable
-d'environnement `ORACLE_HOME` vers le répertoire d'installation.
+Il faut extraire les archives dans le même répertoire `instantclient_10_2` et
+exporter la variable d'environnement `ORACLE_HOME` vers ce répertoire.
 
 ```bash
-export ORACLE_HOME=/usr/lib/oracle/10.2.0.5/client64
+export ORACLE_HOME=instantclient_10_2 # extraction du tar.gz
 ```
 
-`cx_Oracle` peut s'installer facilement à partir de pip. La documentation est
-disponible sur
-[cx-oracle.readthedocs.org](http://cx-oracle.readthedocs.org/en/latest/).
+Une fois `ORACLE_HOME` exporté, `cx_Oracle`, `PyYAML` et `flask` peut
+s'installer facilement à partir de pip:
 
 ```bash
-pip3 install --user cx_Oracle PyYAML
+pip install --user cx_Oracle PyYAML flask
 ```
 
 Pour paramétrer l'exécution, ajoutez un fichier de configuration YAML
@@ -41,22 +43,20 @@ database:
         host: delphes.iro.umontreal.ca
         port: 1521
         sid:  a05
-    user:     # mettre votre usager au DIRO
-    password: # mot de passe (voir les notes)
+    user:                # mettre votre usager au DIRO
+    password:            # mot de passe (voir les notes)
+SECRET_KEY: "secrey key" # clé secrète pour la session
 ```
-
-Aucune configuration ne devrait se trouver dans le dépôt, considérant qu'elle
-contient des données sensibles propre à chaque environnement d'exéction.
 
 Avant de démarrer l'application, il faut rendre la librarire accessible au
 chargement dynamique en exportant `LD_LIBRARY_PATH`.
 
 ```bash
-export LD_LIBRARY_PATH=/usr/lib/oracle/10.2.0.5/client64/lib
+export LD_LIBRARY_PATH=instantclient_10_2
 ```
 
 Ensuite, vous pouvez démarrer l'application:
 
 ```bash
-python3 app.py
+python app.py
 ```
