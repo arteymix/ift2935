@@ -1,5 +1,4 @@
--- bandes annonces des nouveautés
--- nouveauté avec un bon rating de bande-annonce
+-- bande-annonces des films avec un bon rating
 
 select Video.titre, Video.dateSortie, AVG(note) as note_moyenne, COALESCE(SUM(nbVisionnement), 0) visionnements_bandes_annonces from Film
 	join Video on Film.id = Video.id

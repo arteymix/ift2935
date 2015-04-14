@@ -6,5 +6,3 @@ select video.titre, video.description, fichier.chemin from serie
 	join fichier on fichier.noVideo = bandeannonce.id
 	where genre = 'Épouvante'
 	order by video.dateSortie DESC
-
- -- remplacer par :genre , les plus récents en premier

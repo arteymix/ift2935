@@ -1,6 +1,4 @@
---George Clooney est realisateur, affiche les film realiser par george clooney
-
--- todo: union avec les films ou il est acteur
+-- vidéos dans lesquels George Clooney est acteur ou réalisateur
 
 select titre, description, DECODE(Realise.id, null, '--', 'Réalisateur') as realisateur,
 		DECODE(APourRole.id, null, '--', nomPersonnage) as nom_personnage
