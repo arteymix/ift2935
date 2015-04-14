@@ -200,7 +200,7 @@ create table Compte (
 	nomUtilisateur	varchar2(55) primary key,
 	motDePasse		varchar2(35) not null,
 	adresse			varchar2(200),
-	telephone		varchar(12),
+	telephone		varchar2(12),
 	dateInscription	date,
 	idPerso			number(8) not null,
 --
