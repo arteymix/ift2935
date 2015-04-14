@@ -1,9 +1,12 @@
 -- bandes annonces des nouveautés
 -- nouveauté avec un bon rating de bande-annonce
 
-select Video.titre, Video.dateSortie from BandeAnnonce
-    join Video on oeuvreId = Video.id
-    where Video.id in (select noVideo from AProposDe  -- les mieux notés
-                           group by noVideo
-                           having AVG(note) >= 80)
-    and dateSortie >= CURRENT_DATE - INTERVAL '3' MONTH -- les trois derniers mois
+select video.id, Video.titre, Video.dateSortie, AVG(note) as note_moyenne, SUM(nbVisionnement) visionnements_bandes_annonces from Film
+	join Video on Film.id = Video.id
+	join AProposDe on Video.id = AProposDe.noVideo
+	left join BandeAnnonce on BandeAnnonce.oeuvreId = video.id
+	left join Fichier on Fichier.noVideo = BandeAnnonce.id
+	-- and dateSortie > CURRENT_DATE - INTERVAL '1' MONTH -- le dernier mois
+	group by video.id, video.titre, dateSortie
+	having AVG(note) >= 80 -- commentaires sur la vidéo
+	order by AVG(note) desc

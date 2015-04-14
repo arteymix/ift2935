@@ -1,5 +1,5 @@
 -- retourne le dernier video regarder par l'utilisateur 'e.trottier'
-select titre, description, nomUtilisateur, dateLocation, datePublication, contenu, note from Loue
+select titre, description, nomUtilisateur, dateLocation, contenu, note from Loue
 	natural join Fichier
 	join Video on Video.id = Fichier.noVideo -- jointure sur le chemin
 	left join AProposDe on AProposDe.noVideo = Video.id

@@ -28,16 +28,16 @@
       <div class="col-md-8">
         <ul class="nav nav-pills">
           {% for k, v in {
-            'cinema-projet': 'Historique des projections de George Clooney (acteur)',
-            'auteur-homme': 'Films d\'auteur masculin',
-            'films-attendus': 'Films attendus',
-            'best-review': 'Meilleures revues',
-            'george-clooney-movies': 'Films de George Clooney',
-            'last-seen-video': 'Derniers vidéos vus',
-            'most-renting': 'Le plus de locations',
-            'mots-cles-des-videos-epouvante': 'Mot-clés des vidéos d\'épouvante',
-            'bande-annonce-des-series-epouvante': 'Bandes-annonces des séries d\'épouvantes',
-            'ten-most-viewed-video': '10 vidéos les plus vus' }.items()
+            'cinema-projet': 'Historique des projections de l\'acteur George Clooney (6 tables)',
+            'auteur-homme': 'Bonnes critiques d\'auteurs masculins (6 tables)',
+            'films-attendus': 'Films attendus (5 tables)',
+            'best-review': 'Meilleures revues (2 tables)',
+            'george-clooney-movies': 'Films de George Clooney (4 tables)',
+            'last-seen-video': 'Derniers vidéos vus (6 tables)',
+            'most-renting': 'Le plus de locations (3 tables)',
+            'mots-cles-des-videos-epouvante': 'Mot-clés des vidéos d\'épouvante (4 tables)',
+            'bande-annonce-des-series-epouvante': 'Bandes-annonces des séries d\'épouvantes (4 tables)',
+            'ten-most-viewed-video': '10 vidéos les plus vus (2 tables)' }.items()
             %}
           <li><a href="{{ url_for('custom_request', name=k) }}">{{ v }}</a></li>
           {% endfor %}
