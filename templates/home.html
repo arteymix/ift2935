@@ -49,7 +49,7 @@
         {% for cinema in cinemas %}
           <div class="media pull-left col-md-4">
             <div class="media-body">
-              <h4 class="media-heading">{{ cinema[1] }}</h4>
+              <h4 class="media-heading"><a href="{{ url_for('cinema', cinema_id=cinema[0]) }}">{{ cinema[1] }}</a></h4>
               <address>{{ cinema[2] }}</address>
               <p>{{ cinema[3] }}</p>
               <a href="{{ cinema[4] }}">{{ cinema[4] }}</a>
