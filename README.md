@@ -1,6 +1,18 @@
 IFT2935: Base de données
 ========================
 
+Données
+-------
+
+Avant de démarrer l'application, il faut avoir préalablement créer les tables
+et insérer les données à partir de `sqlplus`:
+
+```sql
+@sql/final/LDD.sql
+@sql/final/LMD.sql
+COMMIT; -- applique les changements
+```
+
 Installation
 ------------
 
