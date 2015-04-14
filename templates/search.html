@@ -21,7 +21,9 @@
     </tr>
     {% for result in results %}
     <tr>
-        {{ result }}
+      <td><a href="{{ url_for('video', video_id=result[0]) }}">{{ result[2] }}</a></td>
+      <td>{{ result[1] }}</td>
+      <td>{{ result[3] }}</td>
     </tr>
     {% else %}
     <tr>

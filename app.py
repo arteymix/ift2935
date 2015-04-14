@@ -59,7 +59,7 @@ def logout():
 def search():
     results = db.cursor()
     results.prepare('select * from video where description like :terms')
-    results.execute(None, {'terms': '*'})
+    results.execute(None, {'terms': '%' + request.args.get('terms') + '%'})
     return render_template('search.html', results=results)
 
 @app.route('/cinema/<int:cinema_id>')

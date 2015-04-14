@@ -1,7 +1,7 @@
 -- bandes annonces des nouveautés
 -- nouveauté avec un bon rating de bande-annonce
 
-select video.id, Video.titre, Video.dateSortie, AVG(note) as note_moyenne, SUM(nbVisionnement) visionnements_bandes_annonces from Film
+select Video.titre, Video.dateSortie, AVG(note) as note_moyenne, SUM(nbVisionnement) visionnements_bandes_annonces from Film
 	join Video on Film.id = Video.id
 	join AProposDe on Video.id = AProposDe.noVideo
 	left join BandeAnnonce on BandeAnnonce.oeuvreId = video.id
