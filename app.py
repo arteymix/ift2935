@@ -114,6 +114,4 @@ def video(video_id):
 def preferences():
     return render_template('preferences.html')
 
-app.config['SECRET_KEY'] = '2312312'
-
 app.run(debug=True)
