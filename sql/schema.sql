@@ -8,37 +8,6 @@
 ---liste des genres selon http://moviecovers.com/genres.html
 
 
----DESTRUCTION DES tableS
-DROP table MotCle;
-
-DROP table Loue;
-
-DROP table APourRole;
-DROP table Realise;
-
-DROP table Projette;
-DROP table Cinema;
-
-alter table Serie drop constraint fkSerieNoVideo_id; 
-
-DROP table Fichier;
-DROP table Emission;
-DROP table Film;
-DROP table OeuvreCinematographique;
-DROP table Serie;
-DROP table BandeAnnonce;
-DROP table Video;
-
-DROP table AProposDe;
-DROP table Article;
-
-DROP table Acteur;
-DROP table Realisateur;
-DROP table Professionnel;
-DROP table Journaliste;
-DROP table Compte;
-DROP table Personne;
-
 create table Personne(
 	id            number(8) primary key,
 	prenom        varchar2(30) not null,
@@ -46,6 +15,7 @@ create table Personne(
 	sexe          varchar2(10), -- queer :)
 	dateNaissance date not null,
 	dateDeces     date
+--	,constraint sexeDomainePersonne check (sexe in('homme', 'femme', 'inconnu','cache'))
 );
 
 create table Journaliste (
@@ -109,8 +79,8 @@ create table Video(
 create table Fichier (
 	chemin				varchar2(50),
 	prix				decimal(5,2) not null,
-	nbTelechargement	number(10) not null default(0),
-	nbVisionnement		number(10) not null default(0),
+	nbTelechargement	number(10) default 0 not null,
+	nbVisionnement		number(10) default 0 not null,
 	dateAcquisition		date,
 	estArchive			number(1) not null, -- boolean
 	noVideo				number(6),
@@ -267,7 +237,3 @@ create table Realise(
 	constraint fkRealise_id foreign key (id) references Realisateur(id),
 	constraint fkRealise_video foreign key (noVideo) references Video(id)
 );
-
-
-
--- création de vues

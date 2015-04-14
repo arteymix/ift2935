@@ -2,9 +2,9 @@
 <html lang="fr">
   <head>
     <title>Netflix 2</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//bootswatch.com/sandstone/bootstrap.min.css">
   </head>
-  <body>
+  <body style="padding: 120px 0 120px 0">
   <header class="container">
     <div class="row">
       <div class="col-md-8">
@@ -23,36 +23,22 @@
         </form>
       </div>
     </div>
+    <ul class="nav nav-pills">
+    {% for name in ['test', 'test', 'test'] %}
+      <li><a href="{{ url_for('custom_request', name=name) }}">{{ name }}</a></li>
+    {% endfor %}
+    </ul>
   </hedaer>
   <div class="container">
-
-    <div class="row">
-      <h3>Tables de la base de donnée</h3>
-      <table class="table">
-        <tr>
-          {% for col in description %}
-          <th>{{ col }}</th>
-          {% endfor %}
-        </tr>
-        {% for table in tables %}
-        <tr>
-          {% for col in table %}
-          <td>{{ col }}</td>
-          {% endfor %}
-        </tr>
-        {% endfor %}
-      </table>
-    </div>
-
     {% block content %}{% endblock %}
-
   </div>
   <footer class="container">
     <div class="row">
       <div class="col-md-4">
-        <h4><a href="">Films vus récemment</a></h4>
-        <ul>
-        </ul>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
       </div>
     </div>
   </footer>
