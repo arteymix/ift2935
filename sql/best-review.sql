@@ -5,7 +5,14 @@
 --    GROUP BY noVideo
 --    ORDER BY note_moyenne
 
+--
+-- beaucoup de vues sur les bandes-annonces
+-- bon reviews sur les films? (on verra)
+-- titre, description, dateSortie, chemin
 
-Select video.id, titre, avg(note) from Video join AProposDe on Video.id =
-AProposDe.noVideo group by (video.id, video.titre) order by avg(note) desc
+
+select titre, description, avg(note) as note_moyenne from Video
+	join AProposDe on Video.id = AProposDe.noVideo
+	group by video.id, video.titre, description
+	order by avg(note) desc
 

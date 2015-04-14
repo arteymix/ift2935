@@ -112,7 +112,7 @@ create table OeuvreCinematographique(
 	constraint numeroDomaineOC check (numero >= 0)
 );
 
-alter table Serie add constraint fkSerieNoVideo_id foreign key (id) references OeuvreCinematographique(id); 
+alter table Serie add constraint fkSerieNoVideo_id foreign key (id) references OeuvreCinematographique(id);
 
 create table Emission(
 	id number(6) primary key,
@@ -250,11 +250,12 @@ create table Projette(
 -- A PROPOS
 --
 create table Article(
-	id				number(7) primary key,
+	id		number(7)      primary key,
 	datePublication	date,
-	contenu			varchar2(2000) not null,
-	idJournaliste number(8),
-	constraint fkAuteur_article foreign key (idJournaliste) references Journaliste(id)
+	contenu		varchar2(2000) not null,
+	idAuteur        number(8),
+--
+	constraint fkAuteur_article foreign key (idAuteur) references Personne(id)
 );
 
 create table AProposDe(
