@@ -7,7 +7,7 @@
 ---CREATION DES tableS
 ---liste des genres selon http://moviecovers.com/genres.html
 
-
+drop procedure insertSerie;
 drop sequence video_seq;
 drop trigger video_pk_gen;
 

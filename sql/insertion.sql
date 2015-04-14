@@ -174,88 +174,149 @@ insert into Realisateur values(20000020);
 --
 -- SERIE
 --
+begin
+  insertSerie(
+    'Après une apocalypse ayant transformé la quasi-totalité de la population en zombies, un groupe d''hommes et de femmes mené par l''officier Rick Grimes tente de survivre... Ensemble, ils vont devoir tant bien que mal faire face à ce nouveau monde devenu méconnaissable, à travers leur périple dans le Sud profond des États-Unis.',
+    'The Walking Dead',
+    to_date('01/10/10', 'DD/MM/YY'),
+   'Épouvante',
+    null,
+    null
+  );
 
-insert into Video values(1, 'Après une apocalypse ayant transformé la quasi-totalité de la population en zombies, un groupe d''hommes et de femmes mené par l''officier Rick Grimes tente de survivre... Ensemble, ils vont devoir tant bien que mal faire face à ce nouveau monde devenu méconnaissable, à travers leur périple dans le Sud profond des États-Unis.', 'The Walking Dead', to_date('01/10/10', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(1, null, null);
-insert into Serie values(1);
+  insertSerie(
+    'Saison 1 de la populaire émission The Walking Dead',
+    'The Walking Dead: saison 1',
+    to_date('01/09/10', 'DD/MM/YY'),
+    'Épouvante',
+    1,
+    1
+  );
 
-insert into Video values(2, 'Saison 1 de la populaire émission The Walking Dead', 'The Walking Dead: saison 1', to_date('01/09/10', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(2, 1, 1);
-insert into Serie values(2);
+  insertSerie(
+    'Saison 2 de la populaire émission The Walking Dead',
+    'The Walking Dead: saison 2',
+    to_date('01/09/11', 'DD/MM/YY'),
+    'Épouvante',
+    2,
+    1
+  );
 
-insert into Video values(3, 'Saison 2 de la populaire émission The Walking Dead', 'The Walking Dead: saison 2', to_date('01/09/11', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(3, 2, 1);
-insert into Serie values(3);
+  insertSerie(
+    'Saison 3 de la populaire émission The Walking Dead',
+    'The Walking Dead: saison 3',
+    to_date('01/09/12', 'DD/MM/YY'),
+    'Épouvante',
+    3,
+    1
+  );
 
-insert into Video values(4, 'Saison 3 de la populaire émission The Walking Dead', 'The Walking Dead: saison 3', to_date('01/09/12', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(4, 3, 1);
-insert into Serie values(4);
+  insertSerie(
+    'Saison 4 de la populaire émission The Walking Dead',
+    'The Walking Dead: saison 4',
+    to_date('01/09/13', 'DD/MM/YY'),
+    'Épouvante',
+    4,
+    1
+  );
 
-insert into Video values(5, 'Saison 4 de la populaire émission The Walking Dead', 'The Walking Dead: saison 4', to_date('01/09/13', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(5, 4, 1);
-insert into Serie values(5);
+  insertSerie(
+    'Saison 5 de la populaire émission The Walking Dead',
+    'The Walking Dead: saison 5',
+    to_date('01/09/14', 'DD/MM/YY'),
+    'Épouvante',
+    5,
+    1
+  );
 
-insert into Video values(6, 'Saison 5 de la populaire émission The Walking Dead', 'The Walking Dead: saison 5', to_date('01/09/14', 'DD/MM/YY'), 'Épouvante');
-insert into OeuvreCinematographique values(6, 5, 1);
-insert into Serie values(6);
+  insertSerie(
+    'Il y a très longtemps, à une époque oubliée, une force a détruit l''équilibre des saisons. Dans un pays où l''été peut durer plusieurs années et l''hiver toute une vie, des forces sinistres et surnaturelles se pressent aux portes du Royaume des Sept Couronnes. La confrérie de la Garde de Nuit, protégeant le Royaume de toute créature pouvant provenir d''au-delà du Mur protecteur, n''a plus les ressources nécessaires pour assurer la sécurité de tous. Après un été de dix années, un hiver rigoureux s''abat sur le Royaume avec la promesse d''un avenir des plus sombres. Pendant ce temps, complots et rivalités se jouent sur le continent pour s''emparer du Trône de Fer, le symbole du pouvoir absolu.',
+    'Games of Thrones',
+    to_date('17/05/11', 'DD/MM/YY'),
+    'Fantastique',
+    null,
+    null
+  );
 
-insert into Video values(7, 'Il y a très longtemps, à une époque oubliée, une force a détruit l''équilibre des saisons. Dans un pays où l''été peut durer plusieurs années et l''hiver toute une vie, des forces sinistres et surnaturelles se pressent aux portes du Royaume des Sept Couronnes. La confrérie de la Garde de Nuit, protégeant le Royaume de toute créature pouvant provenir d''au-delà du Mur protecteur, n''a plus les ressources nécessaires pour assurer la sécurité de tous. Après un été de dix années, un hiver rigoureux s''abat sur le Royaume avec la promesse d''un avenir des plus sombres. Pendant ce temps, complots et rivalités se jouent sur le continent pour s''emparer du Trône de Fer, le symbole du pouvoir absolu.', 'Games of Thrones', to_date('17/05/11', 'DD/MM/YY'), 'Fantastique');
-insert into OeuvreCinematographique values(7, null, null);
-insert into Serie values(7);
+  insertSerie(
+    'Saison 1 de la populaire émission Game of Thrones',
+    'Game of Thrones: saison 1',
+    to_date('17/04/11', 'DD/MM/YY'),
+    'Fantastique',
+    1,
+    7
+  );
 
-insert into Video values(8, 'Saison 1 de la populaire émission Game of Thrones', 'Game of Thrones: saison 1', to_date('17/04/11', 'DD/MM/YY'), 'Fantastique');
-insert into OeuvreCinematographique values(8, 1, 7);
-insert into Serie values(8);
+  insertSerie(
+    'Saison 2 de la populaire émission Game of Thrones',
+    'Game of Thrones: saison 2',
+    to_date('17/04/12', 'DD/MM/YY'),
+    'Fantastique',
+    2,
+    7
+  );
 
-insert into Video values(9, 'Saison 2 de la populaire émission Game of Thrones', 'Game of Thrones: saison 2', to_date('17/04/12', 'DD/MM/YY'), 'Fantastique');
-insert into OeuvreCinematographique values(9, 2, 7);
-insert into Serie values(9);
+  insertSerie(
+    'Cela fait des années qu’ils ne se sont pas vus lorsque Martin, un loser qui multiplie les mauvaises fréquentations et accumule les problèmes, débarque chez son frère, Jean, un Frenchy installé à Londres où il mène une vie bien rangée de chef d’entreprise, de mari, de père de famille… et d''amant discret. Martin n’est pas le bienvenu. Jean a tiré un trait sur son passé. Mais le métier de Jean, nettoyeur de scènes de crimes, et le don de Martin d''attirer les embrouilles vont très vite les propulser dans l’univers à la fois sordide et délirant du crime organisé. Et ils vont devoir affronter leurs traumatismes et comprendre que rien ou presque ne pourra véritablement effacer le terrible secret qui remonte à leur enfance, dans leur Vendée natale, au cœur de la ferme familiale.',
+    'Spotless',
+    to_date('04/10/15', 'DD/MM/YY'),
+    'Thriller',
+    null,
+    null
+  );
 
-insert into Video values(10, 'Cela fait des années qu’ils ne se sont pas vus lorsque Martin, un loser qui multiplie les mauvaises fréquentations et accumule les problèmes, débarque chez son frère, Jean, un Frenchy installé à Londres où il mène une vie bien rangée de chef d’entreprise, de mari, de père de famille… et d''amant discret. Martin n’est pas le bienvenu. Jean a tiré un trait sur son passé. Mais le métier de Jean, nettoyeur de scènes de crimes, et le don de Martin d''attirer les embrouilles vont très vite les propulser dans l’univers à la fois sordide et délirant du crime organisé. Et ils vont devoir affronter leurs traumatismes et comprendre que rien ou presque ne pourra véritablement effacer le terrible secret qui remonte à leur enfance, dans leur Vendée natale, au cœur de la ferme familiale.', 'Spotless', to_date('04/10/15', 'DD/MM/YY'), 'Thriller');
-insert into OeuvreCinematographique values(10, null, null);
-insert into Serie values(10);
+  insertSerie(
+    'Après une apocalypse nucléaire causée par l''Homme lors d''une troisième Guerre Mondiale, les 318 survivants recensés se réfugient dans des stations spatiales et parviennent à y vivre et à se reproduire, atteignant le nombre de 4000. Mais 97 ans plus tard, le vaisseau mère, l''Arche, est en piteux état. Une centaine de jeunes délinquants emprisonnés au fil des années pour des crimes ou des trahisons sont choisis comme cobayes par les autorités pour redescendre sur Terre et tester les chances de survie. Dès leur arrivée, ils découvrent un nouveau monde dangereux mais fascinant...',
+    'The 100',
+    to_date('02/05/14', 'DD/MM/YY'),
+    'Science fiction',
+    null,
+    null
+  );
 
-insert into Video values(11, 'Après une apocalypse nucléaire causée par l''Homme lors d''une troisième Guerre Mondiale, les 318 survivants recensés se réfugient dans des stations spatiales et parviennent à y vivre et à se reproduire, atteignant le nombre de 4000. Mais 97 ans plus tard, le vaisseau mère, l''Arche, est en piteux état. Une centaine de jeunes délinquants emprisonnés au fil des années pour des crimes ou des trahisons sont choisis comme cobayes par les autorités pour redescendre sur Terre et tester les chances de survie. Dès leur arrivée, ils découvrent un nouveau monde dangereux mais fascinant...', 'The 100', to_date('02/05/14', 'DD/MM/YY'), 'Science fiction');
-insert into OeuvreCinematographique values(11, null, null);
-insert into Serie values(11);
-
-insert into Video values(12, 'Very Bad Trip (The Hangover) est une série de films américains réalisés par Todd Phillips, qui a débutée en 2009 et se termina en 2013.', 'Very bad trip', to_date('24/06/09', 'DD/MM/YY'), 'Comédie');
-insert into OeuvreCinematographique values(12, null, null);
-insert into Serie values(12);
-
+  insertSerie(
+    'Very Bad Trip (The Hangover) est une série de films américains réalisés par Todd Phillips, qui a débutée en 2009 et se termina en 2013.',
+    'Very bad trip',
+    to_date('24/06/09', 'DD/MM/YY'),
+    'Comédie',
+    null,
+    null
+  );
+end;
+/
 
 --
 -- EMISSION
 --
-insert into Video values(13, 'Dans le Kentucky, Rick Grimes, un policier, se réveille à l''hôpital après plusieurs semaines de coma provoqué par une fusillade qui a mal tourné. Il découvre que le monde, ravagé par une épidémie, est envahi par les morts-vivants. Rick ne songe qu''à une chose : retrouver sa femme Lori et son fils Carl. Il se rend chez lui mais constate qu''ils ont disparu, puis rencontre Morgan et son fils Duane, qui se terrent dans leur maison. L''homme lui explique que la seule façon de tuer les zombies est de les atteindre à la tête. Il lui indique aussi qu''il existe un camp de réfugiés aux alentours d''Atlanta...', 'Passé décomposé', to_date('01/10/10', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Dans le Kentucky, Rick Grimes, un policier, se réveille à l''hôpital après plusieurs semaines de coma provoqué par une fusillade qui a mal tourné. Il découvre que le monde, ravagé par une épidémie, est envahi par les morts-vivants. Rick ne songe qu''à une chose : retrouver sa femme Lori et son fils Carl. Il se rend chez lui mais constate qu''ils ont disparu, puis rencontre Morgan et son fils Duane, qui se terrent dans leur maison. L''homme lui explique que la seule façon de tuer les zombies est de les atteindre à la tête. Il lui indique aussi qu''il existe un camp de réfugiés aux alentours d''Atlanta...', 'Passé décomposé', to_date('01/10/10', 'DD/MM/YY'), 'Épouvante');
 insert into OeuvreCinematographique values(13, 1, 2);
 insert into Emission values(13);
 
-insert into Video values(14, 'Rick parvient à s''extraire du char et rencontre un groupe de survivants avec le jeune Glenn, Andrea, Morales, T-Dog et Merle Dixon, un homme passablement raciste et énervé. Tous sont réfugiés dans un immeuble et se demandent comment en sortir. Les zombies tentent de prendre d''assaut le bâtiment. Rick est obligé d''attacher Dixon pour le calmer car son attitude envers T-Dog envenime la situation. Le petit groupe pense d''abord à s''échapper par les égouts. Dans le camp de réfugiés à l''extérieur de la ville, Lori et Shane deviennent amants...', 'Tripes', to_date('07/11/10', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Rick parvient à s''extraire du char et rencontre un groupe de survivants avec le jeune Glenn, Andrea, Morales, T-Dog et Merle Dixon, un homme passablement raciste et énervé. Tous sont réfugiés dans un immeuble et se demandent comment en sortir. Les zombies tentent de prendre d''assaut le bâtiment. Rick est obligé d''attacher Dixon pour le calmer car son attitude envers T-Dog envenime la situation. Le petit groupe pense d''abord à s''échapper par les égouts. Dans le camp de réfugiés à l''extérieur de la ville, Lori et Shane deviennent amants...', 'Tripes', to_date('07/11/10', 'DD/MM/YY'), 'Épouvante');
 insert into OeuvreCinematographique values(14, 2, 2);
 insert into Emission values(14);
 
-insert into Video values(15, 'Rick, Glenn et le petit groupe de survivants parviennent à rejoindre le camp de réfugiés situé dans les montagnes aux alentours d''Atlanta. Rick retrouve sa femme Lori et son fils Carl. Son ancien coéquipier, Shane, qui était devenu l''amant de Lori, est forcément surpris du retour de Rick. Le cas de Merle Dixon fait débat : fallait-il le laisser attaché sur le toit sans défense ? La découverte d''un mort-vivant aux abords du camp et le retour de Daryl Dixon, le frère de Merle, précipitent les choses : Rick décide de retourner à Atlanta pour délivrer Merle et récupérer des armes et des munitions...', 'Les grenouilles', to_date('14/11/10', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Rick, Glenn et le petit groupe de survivants parviennent à rejoindre le camp de réfugiés situé dans les montagnes aux alentours d''Atlanta. Rick retrouve sa femme Lori et son fils Carl. Son ancien coéquipier, Shane, qui était devenu l''amant de Lori, est forcément surpris du retour de Rick. Le cas de Merle Dixon fait débat : fallait-il le laisser attaché sur le toit sans défense ? La découverte d''un mort-vivant aux abords du camp et le retour de Daryl Dixon, le frère de Merle, précipitent les choses : Rick décide de retourner à Atlanta pour délivrer Merle et récupérer des armes et des munitions...', 'Les grenouilles', to_date('14/11/10', 'DD/MM/YY'), 'Épouvante');
 insert into OeuvreCinematographique values(15, 3, 2);
 insert into Emission values(15);
 
-insert into Video values(16, 'A Atlanta, Rick, Glenn, T-Dog et Daryl cherchent Merle, qui a réussi à s''enfuir malgré sa main coupée. En voulant récupérer le sac d''armes, ils rencontrent un autre groupe de survivants, qui eux aussi veulent s''emparer des munitions. Le gang capture Glenn et les deux parties vont devoir négocier. Au camp en dehors de la ville, alors qu''Andrea s''est rapprochée de sa soeur Amy, Jim montre des signes d''inquiétude. L''homme ne cesse de creuser des tombes et semble perdre toute notion de la réalité. Les autres habitants du camp décident de l''attacher de manière préventive...', 'Le gang', to_date('21/11/10', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('A Atlanta, Rick, Glenn, T-Dog et Daryl cherchent Merle, qui a réussi à s''enfuir malgré sa main coupée. En voulant récupérer le sac d''armes, ils rencontrent un autre groupe de survivants, qui eux aussi veulent s''emparer des munitions. Le gang capture Glenn et les deux parties vont devoir négocier. Au camp en dehors de la ville, alors qu''Andrea s''est rapprochée de sa soeur Amy, Jim montre des signes d''inquiétude. L''homme ne cesse de creuser des tombes et semble perdre toute notion de la réalité. Les autres habitants du camp décident de l''attacher de manière préventive...', 'Le gang', to_date('21/11/10', 'DD/MM/YY'), 'Épouvante');
 insert into OeuvreCinematographique values(16, 4, 2);
 insert into Emission values(16);
 
-insert into Video values(17, 'Après l''attaque du campement, tous les survivants sont résignés et abattus. Andrea pleure sa soeur Amy, Shane reproche à Rick d''être parti à Atlanta et d''avoir laissé le camp sans renfort, mais c''est surtout l''état de santé de Jim qui inquiète. Il a été mordu par un mort-vivant et sa santé se dégrade. Rick cherche du soutien chez Lori et propose au groupe de quitter les montagnes pour essayer de trouver le centre de soins et de prévention des maladies infectieuses. Il pense que l''endroit est encore protégé par l''armée. Tous prennent la route alors que Jim est de plus en plus fiévreux...', 'Wildfire', to_date('28/11/10', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Après l''attaque du campement, tous les survivants sont résignés et abattus. Andrea pleure sa soeur Amy, Shane reproche à Rick d''être parti à Atlanta et d''avoir laissé le camp sans renfort, mais c''est surtout l''état de santé de Jim qui inquiète. Il a été mordu par un mort-vivant et sa santé se dégrade. Rick cherche du soutien chez Lori et propose au groupe de quitter les montagnes pour essayer de trouver le centre de soins et de prévention des maladies infectieuses. Il pense que l''endroit est encore protégé par l''armée. Tous prennent la route alors que Jim est de plus en plus fiévreux...', 'Wildfire', to_date('28/11/10', 'DD/MM/YY'), 'Épouvante');
 insert into OeuvreCinematographique values(17, 5, 2);
 insert into Emission values(17);
 
-insert into Video values(18, 'Rick et les survivants pénètrent dans le centre de soins et de recherche sur les maladies infectieuses. Là, le docteur Edwin Jenner les accueille. Il est le seul scientifique présent et vit seul depuis plusieurs mois. Après avoir profité d''un repos auquel ils n''avaient plus goûté depuis longtemps, Rick, Shane et le groupe se posent beaucoup de questions sur ce qui s''est passé dans le centre. Le docteur Jenner leur explique l''état le plus avancé de la recherche sur ce qui transforme les morts en zombies. Mais la situation n''est pas aussi idéale qu''il n''y paraît...', 'Sujet-test 19', to_date('05/12/10', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Rick et les survivants pénètrent dans le centre de soins et de recherche sur les maladies infectieuses. Là, le docteur Edwin Jenner les accueille. Il est le seul scientifique présent et vit seul depuis plusieurs mois. Après avoir profité d''un repos auquel ils n''avaient plus goûté depuis longtemps, Rick, Shane et le groupe se posent beaucoup de questions sur ce qui s''est passé dans le centre. Le docteur Jenner leur explique l''état le plus avancé de la recherche sur ce qui transforme les morts en zombies. Mais la situation n''est pas aussi idéale qu''il n''y paraît...', 'Sujet-test 19', to_date('05/12/10', 'DD/MM/YY'), 'Épouvante');
 insert into OeuvreCinematographique values(18, 6, 2);
 insert into Emission values(18);
 
-insert into Video values(19, 'Les survivants se retrouvent bloqués sur une route envahie par des carcasses de voitures. Ils décident d''en profiter pour siphonner les réservoirs. C''est alors qu''ils sont surpris par un groupe de zombies. Dale tente de superviser les opérations du haut du camion, tandis que Sophia, imprudente, est poursuivie par un groupe de zombies tenaces. Rick parvient à tuer les créatures qui menaçaient Sophia mais la jeune fille disparaît. Rick et les autres se lancent à sa poursuite...', 'Ce qui nous attend', to_date('16/10/11', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Les survivants se retrouvent bloqués sur une route envahie par des carcasses de voitures. Ils décident d''en profiter pour siphonner les réservoirs. C''est alors qu''ils sont surpris par un groupe de zombies. Dale tente de superviser les opérations du haut du camion, tandis que Sophia, imprudente, est poursuivie par un groupe de zombies tenaces. Rick parvient à tuer les créatures qui menaçaient Sophia mais la jeune fille disparaît. Rick et les autres se lancent à sa poursuite...', 'Ce qui nous attend', to_date('16/10/11', 'DD/MM/YY'), 'Épouvante');
 insert into OeuvreCinematographique values(19, 1, 3);
 insert into Emission values(19);
 
-insert into Video values(20, 'A Port-Réal, Tyrion Lannister connaît bien les codes de la Cour royale et use de toute son intelligence pour étendre son influence. Modéré et stratège, il veut limiter les accès de cruauté du roi Joffrey, parfois imprévisible. De son côté, Catelyn Stark s''emploie à négocier une paix entre Stannis et Renly Baratheon, indispensable dans le conflit qui oppose les Stark aux Lannister. Toujours sur la route avec ses quelques fidèles, Daenerys Targaryen arrive à la grande cité de Qarth et espère y trouver refuge...', 'La Cité de Qarth', to_date('22/04/12', 'DD/MM/YY'), 'Fantastique');
+insert into Video(description,titre,dateSortie,genre) values('A Port-Réal, Tyrion Lannister connaît bien les codes de la Cour royale et use de toute son intelligence pour étendre son influence. Modéré et stratège, il veut limiter les accès de cruauté du roi Joffrey, parfois imprévisible. De son côté, Catelyn Stark s''emploie à négocier une paix entre Stannis et Renly Baratheon, indispensable dans le conflit qui oppose les Stark aux Lannister. Toujours sur la route avec ses quelques fidèles, Daenerys Targaryen arrive à la grande cité de Qarth et espère y trouver refuge...', 'La Cité de Qarth', to_date('22/04/12', 'DD/MM/YY'), 'Fantastique');
 insert into OeuvreCinematographique values(20, 4, 3);
 insert into Emission values(20);
 
@@ -263,48 +324,48 @@ insert into Emission values(20);
 --
 -- FILM
 --
-insert into Video values(21, 'Au réveil d''un enterrement de vie de garçon bien arrosé, les trois amis du fiancé se rendent compte qu''il a disparu 40 heures avant la cérémonie de mariage. Ils vont alors devoir faire fi de leur gueule de bois et rassembler leurs bribes de souvenirs pour comprendre ce qui s''est passé.', 'Very bad trip 1', to_date('24/06/09', 'DD/MM/YY'), 'Comédie');
+insert into Video(description,titre,dateSortie,genre) values('Au réveil d''un enterrement de vie de garçon bien arrosé, les trois amis du fiancé se rendent compte qu''il a disparu 40 heures avant la cérémonie de mariage. Ils vont alors devoir faire fi de leur gueule de bois et rassembler leurs bribes de souvenirs pour comprendre ce qui s''est passé.', 'Very bad trip 1', to_date('24/06/09', 'DD/MM/YY'), 'Comédie');
 insert into OeuvreCinematographique values(21, 1, 12);
 insert into Film values(21);
 
-insert into Video values(22, 'Phil, Stu, Alan et Doug s’offrent un voyage exotique en Thaïlande, à l’occasion du mariage de Stu. Après l’inoubliable soirée d’enterrement de sa vie de garçon à Las Vegas, Stu ne veut rien laisser au hasard et opte pour un brunch léger, sans risque, avant la cérémonie. Mais les choses ne se passent pas toujours comme prévu. Ce qui s''est passé à Las Vegas est imaginable à Las Vegas, mais ce qui se passe à Bangkok dépasse l’imagination...', 'Very bad trip 2', to_date('25/05/11', 'DD/MM/YY'), 'Comédie');
+insert into Video(description,titre,dateSortie,genre) values('Phil, Stu, Alan et Doug s’offrent un voyage exotique en Thaïlande, à l’occasion du mariage de Stu. Après l’inoubliable soirée d’enterrement de sa vie de garçon à Las Vegas, Stu ne veut rien laisser au hasard et opte pour un brunch léger, sans risque, avant la cérémonie. Mais les choses ne se passent pas toujours comme prévu. Ce qui s''est passé à Las Vegas est imaginable à Las Vegas, mais ce qui se passe à Bangkok dépasse l’imagination...', 'Very bad trip 2', to_date('25/05/11', 'DD/MM/YY'), 'Comédie');
 insert into OeuvreCinematographique values(22, 2, 12);
 insert into Film values(22);
 
-insert into Video values(23, 'Deux ans ont passé. Phil (Bradley Cooper), Stu (Ed Helms) et Doug (Justin Bartha) mènent des existences tranquilles et heureuses. Ils ont fait disparaître leurs tatouages et se sont rachetés une conduite. Aux dernières nouvelles, Leslie Chow (Ken Jeong), qui attirait les catastrophes, a échoué dans une prison en Thaïlande : depuis qu''il n''est plus dans le secteur, nos trois lascars ont - presque - oublié leurs folles virées nocturnes à travers les quartiers sordides de Las Vegas, à moitié shootés, et le jour où ils se sont fait kidnapper, tirer dessus et prendre en chasse par une bande de dangereux dealers à Bangkok... Le seul de la Meute à ne pas avoir trouvé son équilibre est Alan (Zach Galifianakis). Se cherchant toujours, la brebis galeuse du groupe a arrêté les médocs et donné libre cours à ses impulsions, ce qui, dans son cas, revient à ne reculer devant rien et à ne se fixer aucune limite... Jusqu''à ce qu''il traverse une crise douloureuse et qu''il se mette en quête du soutien dont il a besoin. Et qui mieux que ses trois meilleurs copains pourraient l''aider à s''engager dans la bonne voie ? Cette fois, il n''y a pas de mariage, ni de fête d''enterrement de vie de garçon. Qu''est-ce-qui pourrait donc bien dégénérer ? Mais quand la Meute s''en mêle, il faut être prêt à tout ! Et pour boucler la boucle, la petite bande doit retourner là où tout a commencé : à Las Vegas...', 'Very bad trip 3', to_date('29/05/13', 'DD/MM/YY'), 'Comédie');
+insert into Video(description,titre,dateSortie,genre) values('Deux ans ont passé. Phil (Bradley Cooper), Stu (Ed Helms) et Doug (Justin Bartha) mènent des existences tranquilles et heureuses. Ils ont fait disparaître leurs tatouages et se sont rachetés une conduite. Aux dernières nouvelles, Leslie Chow (Ken Jeong), qui attirait les catastrophes, a échoué dans une prison en Thaïlande : depuis qu''il n''est plus dans le secteur, nos trois lascars ont - presque - oublié leurs folles virées nocturnes à travers les quartiers sordides de Las Vegas, à moitié shootés, et le jour où ils se sont fait kidnapper, tirer dessus et prendre en chasse par une bande de dangereux dealers à Bangkok... Le seul de la Meute à ne pas avoir trouvé son équilibre est Alan (Zach Galifianakis). Se cherchant toujours, la brebis galeuse du groupe a arrêté les médocs et donné libre cours à ses impulsions, ce qui, dans son cas, revient à ne reculer devant rien et à ne se fixer aucune limite... Jusqu''à ce qu''il traverse une crise douloureuse et qu''il se mette en quête du soutien dont il a besoin. Et qui mieux que ses trois meilleurs copains pourraient l''aider à s''engager dans la bonne voie ? Cette fois, il n''y a pas de mariage, ni de fête d''enterrement de vie de garçon. Qu''est-ce-qui pourrait donc bien dégénérer ? Mais quand la Meute s''en mêle, il faut être prêt à tout ! Et pour boucler la boucle, la petite bande doit retourner là où tout a commencé : à Las Vegas...', 'Very bad trip 3', to_date('29/05/13', 'DD/MM/YY'), 'Comédie');
 insert into OeuvreCinematographique values(23, 3, 12);
 insert into Film values(23);
 
-insert into Video values(24, 'Dans le sud des États-Unis, deux ans avant la guerre de Sécession, le Dr King Schultz, un chasseur de primes allemand, fait l’acquisition de Django, un esclave qui peut l’aider à traquer les frères Brittle, les meurtriers qu’il recherche. Schultz promet à Django de lui rendre sa liberté lorsqu’il aura capturé les Brittle – morts ou vifs. Alors que les deux hommes pistent les dangereux criminels, Django n’oublie pas que son seul but est de retrouver Broomhilda, sa femme, dont il fut séparé à cause du commerce des esclaves…
+insert into Video(description,titre,dateSortie,genre) values('Dans le sud des États-Unis, deux ans avant la guerre de Sécession, le Dr King Schultz, un chasseur de primes allemand, fait l’acquisition de Django, un esclave qui peut l’aider à traquer les frères Brittle, les meurtriers qu’il recherche. Schultz promet à Django de lui rendre sa liberté lorsqu’il aura capturé les Brittle – morts ou vifs. Alors que les deux hommes pistent les dangereux criminels, Django n’oublie pas que son seul but est de retrouver Broomhilda, sa femme, dont il fut séparé à cause du commerce des esclaves…
 Lorsque Django et Schultz arrivent dans l’immense plantation du puissant Calvin Candie, ils éveillent les soupçons de Stephen, un esclave qui sert Candie et a toute sa confiance. Le moindre de leurs mouvements est désormais épié par une dangereuse organisation de plus en plus proche… Si Django et Schultz veulent espérer s’enfuir avec Broomhilda, ils vont devoir choisir entre l’indépendance et la solidarité, entre le sacrifice et la survie…', 'Django Unchained', to_date('16/01/13', 'DD/MM/YY'), 'Western');
 insert into OeuvreCinematographique values(24, null, null);
 insert into Film values(24);
 
-insert into Video values(25, 'Quelques décennies d''histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et l''étrange odyssée d''un homme simple et pur, Forrest Gump.', 'Forrest Gump', to_date('05/10/94', 'DD/MM/YY'), 'Comédie');
+insert into Video(description,titre,dateSortie,genre) values('Quelques décennies d''histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et l''étrange odyssée d''un homme simple et pur, Forrest Gump.', 'Forrest Gump', to_date('05/10/94', 'DD/MM/YY'), 'Comédie');
 insert into OeuvreCinematographique values(25, null, null);
 insert into Film values(25);
 
-insert into Video values(26, 'Paul Edgecomb, pensionnaire centenaire d''une maison de retraite, est hanté par ses souvenirs. Gardien-chef du pénitencier de Cold Mountain en 1935, il était chargé de veiller au bon déroulement des exécutions capitales en s’efforçant d''adoucir les derniers moments des condamnés. Parmi eux se trouvait un colosse du nom de John Coffey, accusé du viol et du meurtre de deux fillettes. Intrigué par cet homme candide et timide aux dons magiques, Edgecomb va tisser avec lui des liens très forts.', 'La ligne verte', to_date('01/03/00', 'DD/MM/YY'), 'Policier');
+insert into Video(description,titre,dateSortie,genre) values('Paul Edgecomb, pensionnaire centenaire d''une maison de retraite, est hanté par ses souvenirs. Gardien-chef du pénitencier de Cold Mountain en 1935, il était chargé de veiller au bon déroulement des exécutions capitales en s’efforçant d''adoucir les derniers moments des condamnés. Parmi eux se trouvait un colosse du nom de John Coffey, accusé du viol et du meurtre de deux fillettes. Intrigué par cet homme candide et timide aux dons magiques, Edgecomb va tisser avec lui des liens très forts.', 'La ligne verte', to_date('01/03/00', 'DD/MM/YY'), 'Policier');
 insert into OeuvreCinematographique values(26, null, null);
 insert into Film values(26);
 
-insert into Video values(27, 'Walt Kowalski est un ancien de la guerre de Corée, un homme inflexible, amer et pétri de préjugés surannés. Après des années de travail à la chaîne, il vit replié sur lui-même, occupant ses journées à bricoler, traînasser et siroter des bières. Avant de mourir, sa femme exprima le voeu qu''il aille à confesse, mais Walt n''a rien à avouer, ni personne à qui parler. Hormis sa chienne Daisy, il ne fait confiance qu''à son M-1, toujours propre, toujours prêt à l''usage... Ses anciens voisins ont déménagé ou sont morts depuis longtemps. Son quartier est aujourd''hui peuplé d''immigrants asiatiques qu''il méprise, et Walt ressasse ses haines, innombrables - à l''encontre de ses voisins, des ados Hmong, latinos et afro-américains "qui croient faire la loi", de ses propres enfants, devenus pour lui des étrangers. Walt tue le temps comme il peut, en attendant le grand départ, jusqu''au jour où un ado Hmong du quartier tente de lui voler sa précieuse Ford Gran Torino... Walt tient comme à la prunelle de ses yeux à cette voiture fétiche, aussi belle que le jour où il la vit sortir de la chaîne. Lorsque le jeune et timide Thao tente de la lui voler sous la pression d''un gang, Walt fait face à la bande, et devient malgré lui le héros du quartier. Sue, la soeur aînée de Thao, insiste pour que ce dernier se rachète en travaillant pour Walt. Surmontant ses réticences, ce dernier confie au garçon des "travaux d''intérêt général" au profit du voisinage. C''est le début d''une amitié inattendue, qui changera le cours de leur vie. Grâce à Thao et sa gentille famille, Walt va découvrir le vrai visage de ses voisins et comprendre ce qui le lie à ces exilés, contraints de fuir la violence... comme lui, qui croyait fermer la porte sur ses souvenirs aussi aisément qu''il enfermait au garage sa précieuse Gran Torino...', 'Gran Torino', to_date('25/02/09', 'DD/MM/YY'), 'Thriller');
+insert into Video(description,titre,dateSortie,genre) values('Walt Kowalski est un ancien de la guerre de Corée, un homme inflexible, amer et pétri de préjugés surannés. Après des années de travail à la chaîne, il vit replié sur lui-même, occupant ses journées à bricoler, traînasser et siroter des bières. Avant de mourir, sa femme exprima le voeu qu''il aille à confesse, mais Walt n''a rien à avouer, ni personne à qui parler. Hormis sa chienne Daisy, il ne fait confiance qu''à son M-1, toujours propre, toujours prêt à l''usage... Ses anciens voisins ont déménagé ou sont morts depuis longtemps. Son quartier est aujourd''hui peuplé d''immigrants asiatiques qu''il méprise, et Walt ressasse ses haines, innombrables - à l''encontre de ses voisins, des ados Hmong, latinos et afro-américains "qui croient faire la loi", de ses propres enfants, devenus pour lui des étrangers. Walt tue le temps comme il peut, en attendant le grand départ, jusqu''au jour où un ado Hmong du quartier tente de lui voler sa précieuse Ford Gran Torino... Walt tient comme à la prunelle de ses yeux à cette voiture fétiche, aussi belle que le jour où il la vit sortir de la chaîne. Lorsque le jeune et timide Thao tente de la lui voler sous la pression d''un gang, Walt fait face à la bande, et devient malgré lui le héros du quartier. Sue, la soeur aînée de Thao, insiste pour que ce dernier se rachète en travaillant pour Walt. Surmontant ses réticences, ce dernier confie au garçon des "travaux d''intérêt général" au profit du voisinage. C''est le début d''une amitié inattendue, qui changera le cours de leur vie. Grâce à Thao et sa gentille famille, Walt va découvrir le vrai visage de ses voisins et comprendre ce qui le lie à ces exilés, contraints de fuir la violence... comme lui, qui croyait fermer la porte sur ses souvenirs aussi aisément qu''il enfermait au garage sa précieuse Gran Torino...', 'Gran Torino', to_date('25/02/09', 'DD/MM/YY'), 'Thriller');
 insert into OeuvreCinematographique values(27, null, null);
 insert into Film values(27);
 
-insert into Video values(28, 'Dans ce nouveau volet, Batman augmente les mises dans sa guerre contre le crime. Avec l''appui du lieutenant de police Jim Gordon et du procureur de Gotham, Harvey Dent, Batman vise à éradiquer le crime organisé qui pullule dans la ville. Leur association est très efficace mais elle sera bientôt bouleversée par le chaos déclenché par un criminel extraordinaire que les citoyens de Gotham connaissent sous le nom de Joker.', 'Le Chevalier Noir', to_date('13/08/08', 'DD/MM/YY'), 'Thriller');
+insert into Video(description,titre,dateSortie,genre) values('Dans ce nouveau volet, Batman augmente les mises dans sa guerre contre le crime. Avec l''appui du lieutenant de police Jim Gordon et du procureur de Gotham, Harvey Dent, Batman vise à éradiquer le crime organisé qui pullule dans la ville. Leur association est très efficace mais elle sera bientôt bouleversée par le chaos déclenché par un criminel extraordinaire que les citoyens de Gotham connaissent sous le nom de Joker.', 'Le Chevalier Noir', to_date('13/08/08', 'DD/MM/YY'), 'Thriller');
 insert into OeuvreCinematographique values(28, null, null);
 insert into Film values(28);
 
-insert into Video values(29, 'Evocation des années de guerre d''Oskar Schindler, fils d''industriel d''origine autrichienne rentré à Cracovie en 1939 avec les troupes allemandes. Il va, tout au long de la guerre, protéger des juifs en les faisant travailler dans sa fabrique et en 1944 sauver huit cents hommes et trois cents femmes du camp d''extermination de Auschwitz-Birkenau.', 'La Liste de Schindler', to_date('02/03/94', 'DD/MM/YY'), 'Historique');
+insert into Video(description,titre,dateSortie,genre) values('Evocation des années de guerre d''Oskar Schindler, fils d''industriel d''origine autrichienne rentré à Cracovie en 1939 avec les troupes allemandes. Il va, tout au long de la guerre, protéger des juifs en les faisant travailler dans sa fabrique et en 1944 sauver huit cents hommes et trois cents femmes du camp d''extermination de Auschwitz-Birkenau.', 'La Liste de Schindler', to_date('02/03/94', 'DD/MM/YY'), 'Historique');
 insert into OeuvreCinematographique values(29, null, null);
 insert into Film values(29);
 
-insert into Video values(30, 'Une veuve mono-parentale hérite de la garde de son fils, un adolescent TDAH impulsif et violent. Au coeur de leurs emportements et difficultés, ils tentent de joindre les deux bouts, notamment grâce à l’aide inattendue de l’énigmatique voisine d’en face, Kyla. Tous les trois, ils retrouvent une forme d’équilibre et, bientôt, d’espoir.', 'Mommy', to_date('08/10/14', 'DD/MM/YY'), 'Drame');
+insert into Video(description,titre,dateSortie,genre) values('Une veuve mono-parentale hérite de la garde de son fils, un adolescent TDAH impulsif et violent. Au coeur de leurs emportements et difficultés, ils tentent de joindre les deux bouts, notamment grâce à l’aide inattendue de l’énigmatique voisine d’en face, Kyla. Tous les trois, ils retrouvent une forme d’équilibre et, bientôt, d’espoir.', 'Mommy', to_date('08/10/14', 'DD/MM/YY'), 'Drame');
 insert into OeuvreCinematographique values(30, null, null);
 insert into Film values(30);
 
-insert into Video values(31, 'A la suite d’un accident de parapente, Philippe, riche aristocrate, engage comme aide à domicile Driss, un jeune de banlieue tout juste sorti de prison. Bref la personne la moins adaptée pour le job. Ensemble ils vont faire cohabiter Vivaldi et Earth Wind and Fire, le verbe et la vanne, les costumes et les bas de survêtement... Deux univers vont se télescoper, s’apprivoiser, pour donner naissance à une amitié aussi dingue, drôle et forte qu’inattendue, une relation unique qui fera des étincelles et qui les rendra... Intouchables.', 'Intouchables', to_date('02/11/11', 'DD/MM/YY'), 'Comédie');
+insert into Video(description,titre,dateSortie,genre) values('A la suite d’un accident de parapente, Philippe, riche aristocrate, engage comme aide à domicile Driss, un jeune de banlieue tout juste sorti de prison. Bref la personne la moins adaptée pour le job. Ensemble ils vont faire cohabiter Vivaldi et Earth Wind and Fire, le verbe et la vanne, les costumes et les bas de survêtement... Deux univers vont se télescoper, s’apprivoiser, pour donner naissance à une amitié aussi dingue, drôle et forte qu’inattendue, une relation unique qui fera des étincelles et qui les rendra... Intouchables.', 'Intouchables', to_date('02/11/11', 'DD/MM/YY'), 'Comédie');
 insert into OeuvreCinematographique values(31, null, null);
 insert into Film values(31);
 
@@ -315,34 +376,34 @@ insert into Film values(31);
 ---insert into Film values(123456, 'description', 'titre', todate Sortie, 'genre', 12 numero dans la serie, 123456 num de la serie);
 
 ---insert into BandeAnnonce values(123456, 'description', 'titre', dateSortie, 'genre', 123456 videorefere);
-insert into Video values(32, 'Ceci est la bande-annonce officielle de la 1re saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 1', to_date('01/09/10', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la bande-annonce officielle de la 1re saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 1', to_date('01/09/10', 'DD/MM/YY'), 'Épouvante');
 insert into BandeAnnonce values(32, 2);
 
-insert into Video values(33, 'Ceci est la bande-annonce officielle de la 3e saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 3', to_date('01/09/12', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la bande-annonce officielle de la 3e saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 3', to_date('01/09/12', 'DD/MM/YY'), 'Épouvante');
 insert into BandeAnnonce values(33, 4);
 
-insert into Video values(34, 'Ceci est la bande-annonce officielle de la 4e saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 4', to_date('01/09/13', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la bande-annonce officielle de la 4e saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 4', to_date('01/09/13', 'DD/MM/YY'), 'Épouvante');
 insert into BandeAnnonce values(34, 5);
 
-insert into Video values(35, 'Ceci est la bande-annonce officielle de la 5e saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 5', to_date('01/09/14', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la bande-annonce officielle de la 5e saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 5', to_date('01/09/14', 'DD/MM/YY'), 'Épouvante');
 insert into BandeAnnonce values(35, 6);
 
-insert into Video values(36, 'Ceci est la 2e bande-annonce de la 1re saison de The Walking Dead', 'Bande-Annonce #2 - The Walking Dead saison 1', to_date('20/02/14', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la 2e bande-annonce de la 1re saison de The Walking Dead', 'Bande-Annonce #2 - The Walking Dead saison 1', to_date('20/02/14', 'DD/MM/YY'), 'Épouvante');
 insert into BandeAnnonce values(36, 2);
 
-insert into Video values(37, 'Ceci est la bande-annonce officielle du film Intouchables', 'Bande-Annonce Intégrale - Intouchables', to_date('02/01/11', 'DD/MM/YY'), 'Comédie');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la bande-annonce officielle du film Intouchables', 'Bande-Annonce Intégrale - Intouchables', to_date('02/01/11', 'DD/MM/YY'), 'Comédie');
 insert into BandeAnnonce values(37, 31);
 
-insert into Video values(38, 'Ceci est la bande-annonce officielle du film Le chevalier noir', 'Bande-Annonce Intégrale - Le chevalier noir', to_date('13/03/08', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la bande-annonce officielle du film Le chevalier noir', 'Bande-Annonce Intégrale - Le chevalier noir', to_date('13/03/08', 'DD/MM/YY'), 'Épouvante');
 insert into BandeAnnonce values(38, 7);
 
-insert into Video values(39, 'Ceci est la bande-annonce officielle du film Mommy', 'Bande-Annonce - Mommy de Xavier Dolan', to_date('08/01/14', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la bande-annonce officielle du film Mommy', 'Bande-Annonce - Mommy de Xavier Dolan', to_date('08/01/14', 'DD/MM/YY'), 'Épouvante');
 insert into BandeAnnonce values(39, 10);
 
-insert into Video values(40, 'Ceci est la bande-annonce officielle du 1er épisode ("Passé Décomposé") de la 1re saison de The Walking Dead', 'Bande-Annonce - Walking Dead saison 1 épisode 1', to_date('01/01/10', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la bande-annonce officielle du 1er épisode ("Passé Décomposé") de la 1re saison de The Walking Dead', 'Bande-Annonce - Walking Dead saison 1 épisode 1', to_date('01/01/10', 'DD/MM/YY'), 'Épouvante');
 insert into BandeAnnonce values(40, 13);
 
-insert into Video values(41, 'Ceci est la bande-annonce officielle de la 2e saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 2', to_date('01/09/11', 'DD/MM/YY'), 'Épouvante');
+insert into Video(description,titre,dateSortie,genre) values('Ceci est la bande-annonce officielle de la 2e saison de The Walking Dead', 'Bande-Annonce Intégrale - Walking Dead saison 2', to_date('01/09/11', 'DD/MM/YY'), 'Épouvante');
 insert into BandeAnnonce values(41, 3);
 
 
