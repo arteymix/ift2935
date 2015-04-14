@@ -110,9 +110,15 @@ def video(video_id):
     with open('sql/realisateurs-par-video.sql') as f:
         realisateurs.prepare(f.read())
 
+    # réalisateurs du vidéo
+    acteurs = db.cursor()
+    with open('sql/acteurs-par-video.sql') as f:
+        acteurs.prepare(f.read())
+
     return render_template('video.html',
         video=video.execute(None, {'id': video_id}).fetchone(),
-        realisateurs=realisateurs.execute(None, {'video_id': video_id}))
+        realisateurs=realisateurs.execute(None, {'video_id': video_id}),
+        acteurs=acteurs.execute(None, {'video_id': video_id}))
 
 @app.route('/preferences')
 def preferences():
