@@ -1,12 +1,3 @@
----Le sexe est un varchar2(10) et est accompagne dans chaque table par une contrainte de domaine
----Creer un type sexe pourrait eviter toutes les redondances, mais je nai pas ete capable de le faire
----Meme strugle pour les genre des vidéos et cie et les contraintes genreDomaineXXX
----Les attributs heure et adresse et sont aussi "problematiques". Presentement, ce sont que des varchar2(4) et varchar2(200). Au pire, on se dit qu'on est capable de rentrer des bonnes données
----Le telephone est simplement un nombre de 10 chiffres, ce qui est legit
----
----CREATION DES tableS
----liste des genres selon http://moviecovers.com/genres.html
-
 drop procedure insertSerie;
 drop procedure insertEmission;
 drop procedure insertFilm;
@@ -19,7 +10,6 @@ drop trigger video_pk_gen;
 ---DESTRUCTION DES tableS
 alter table OeuvreCinematographique drop constraint fkoeuvrecin_ID;
 alter table OeuvreCinematographique drop constraint fkoeuvrecin_Serie;
---alter table Professionnel drop constraint fkProfessionnel;
 
 DROP table MotCle;
 
@@ -43,7 +33,6 @@ DROP table BandeAnnonce;
 DROP table OeuvreCinematographique;
 
 DROP table Video;
-
 
 DROP table Acteur;
 DROP table Realisateur;
