@@ -23,16 +23,6 @@ def home():
     cinemas.execute('select * from cinema where id in (select noCinema from projette)')
     return render_template('home.html', cinemas=cinemas)
 
-@app.route('/register')
-def register():
-    user = db.cursor()
-    user.prepare('insert into compte values (:username, :password, :adresse,:telephone)')
-    user.prepare('insert into compte')
-
-    user.executemany(None, )
-
-    return redirect(url_for('home'))
-
 @app.route('/login', methods=['POST'])
 def login():
     identification = db.cursor()
@@ -119,9 +109,5 @@ def video(video_id):
         video=video.execute(None, {'id': video_id}).fetchone(),
         realisateurs=realisateurs.execute(None, {'video_id': video_id}),
         acteurs=acteurs.execute(None, {'video_id': video_id}))
-
-@app.route('/preferences')
-def preferences():
-    return render_template('preferences.html')
 
 app.run(debug=True)

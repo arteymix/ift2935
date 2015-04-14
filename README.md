@@ -1,6 +1,18 @@
 IFT2935: Base de données
 ========================
 
+Données
+-------
+
+Avant de démarrer l'application, il faut avoir préalablement créer les tables
+et insérer les données à partir de `sqlplus`:
+
+```sql
+@sql/final/LDD.sql
+@sql/final/LMD.sql
+COMMIT; -- applique les changements
+```
+
 Installation
 ------------
 
@@ -9,6 +21,7 @@ satisfaire quelques dépendances:
 
  - [Oracle Instant Client](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html)
  - [cx_Oracle](http://cx-oracle.sourceforge.net/)
+	- Python 2.7 (Python 3+ ne fonctionne pas)
 
 Les bases de données Oracle du DIRO roulent sous la version 10.2.0.1, alors
 vous pouvez installer la plus récente des 10.2 (10.2.0.5 à ma dernière
@@ -24,11 +37,18 @@ Il faut extraire les archives dans le même répertoire `instantclient_10_2` et
 exporter la variable d'environnement `ORACLE_HOME` vers ce répertoire.
 
 ```bash
-export ORACLE_HOME=instantclient_10_2 # extraction du tar.gz
+export ORACLE_HOME=$(pwd)/instantclient_10_2
+export LD_LIBRARY_PATH=$(pwd)/instantclient_10_2
 ```
 
-Une fois `ORACLE_HOME` exporté, `cx_Oracle`, `PyYAML` et `flask` peut
-s'installer facilement à partir de pip:
+Vous devez créer un lien symbolique pour la librairie `libclntsh.so`.
+
+```bash
+ln -s libclntsh.so.10.1 libclntsh.so
+```
+
+Une fois `ORACLE_HOME` et `LD_LIBRARY_PATH` exportés, `cx_Oracle`, `PyYAML` et
+`flask` peuvent s'installer facilement à partir de pip:
 
 ```bash
 pip install --user cx_Oracle PyYAML flask
@@ -48,12 +68,8 @@ database:
 SECRET_KEY: "secrey key" # clé secrète pour la session
 ```
 
-Avant de démarrer l'application, il faut rendre la librarire accessible au
-chargement dynamique en exportant `LD_LIBRARY_PATH`.
-
-```bash
-export LD_LIBRARY_PATH=instantclient_10_2
-```
+L'indentation doit être respectée et les entrées `user` et `password`
+correspondent aux accès pour Oracle.
 
 Ensuite, vous pouvez démarrer l'application:
 

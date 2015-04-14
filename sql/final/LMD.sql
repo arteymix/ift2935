@@ -1,3 +1,4 @@
+-- insertion des données
 
 SET DEFINE OFF;
 
@@ -54,6 +55,7 @@ insert into Cinema values (49, 'StarCité Montréal (Cineplex)', '4825 ave. Pier
 insert into Cinema values (50, 'Station Vu', '8075 rue Hochelaga (Productions Jeun’Est), Montréal', '580-555-0051','cinema051@gmail.com');
 insert into Cinema values (51, 'St-Eustache', '305 Avenue Mathers, Saint-Eustache', '580-555-0052','cinema052@gmail.com');
 insert into Cinema values (52, 'Théâtre Outremont', '1248 ave. Bernard, Outremont', '581-555-0053','cinema053@gmail.com');
+
 
 insert into Personne values(10000001, 'Sylvain', 'Trottier', 'homme', to_date('16/03/94', 'DD/MM/YY'), null);
 insert into Personne values(10000002, 'Alex', 'Tremblay', 'homme', to_date('16/03/94', 'DD/MM/YY'), null);
@@ -542,3 +544,131 @@ insert into Realise values(20000016, 24);
 insert into Realise values(20000017, 25);
 insert into Realise values(20000017, 26);
 insert into Realise values(20000017, 27);
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------
+-- ten-most-viewed-video.sql
+---------------------------------------------------------------------------------------
+--Affiche le noms des 10 videos les plus telecharges
+select id, titre, nbTelechargement from Video
+    natural join Fichier
+    where rownum <= 10
+    order by nbTelechargement
+;
+
+
+---------------------------------------------------------------------------------------
+-- mots-cles-des-videos-epouvantes.sql
+---------------------------------------------------------------------------------------
+-- moyenne-des-notes	
+-- mots clés des vidéos d'épouvante
+select mot, count(videoId) as nombre_videos, AVG(importance) as importance_moyenne from MotCle where videoId in
+	(select id from Video where genre='Épouvante' or genre='Horreur')
+	group by mot
+;	
+
+	
+---------------------------------------------------------------------------------------
+-- last-seen-video.sql
+---------------------------------------------------------------------------------------
+-- retourne le dernier video regarder par l'utilisateur 'e.trottier'
+select titre, description, nomUtilisateur, dateLocation, contenu, note from Loue
+	natural join Fichier
+	join Video on Video.id = Fichier.noVideo -- jointure sur le chemin
+	left join AProposDe on AProposDe.noVideo = Video.id
+	left join Article on Article.id = AProposDe.noArticle
+	join Personne on Article.idAuteur = Personne.id
+	GROUP BY video.id, titre, description, nomUtilisateur, article.id, dateLocation, datePublication, contenu, note
+	ORDER BY dateLocation DESC, datePublication DESC
+;
+
+	
+---------------------------------------------------------------------------------------
+-- george-clooney-movies.sql
+---------------------------------------------------------------------------------------
+-- George Clooney est realisateur, affiche les film realiser par george clooney
+select titre, description, DECODE(Realise.id, null, '--', 'Réalisateur') as realisateur,
+		DECODE(APourRole.id, null, '--', nomPersonnage) as nom_personnage
+	from Video
+	left join Realise on Realise.noVideo = Video.id   --
+	left join APourRole on APourRole.noVideo = Video.id --
+	where Realise.id in (select id as i from Personne where prenom='George' and nom='Clooney')
+	or    APourRole.id in (select id as i from Personne where prenom='George' and nom='Clooney')
+;
+
+
+---------------------------------------------------------------------------------------
+-- films-attendus.sql
+---------------------------------------------------------------------------------------
+-- bandes annonces des nouveautés
+-- nouveauté avec un bon rating de bande-annonce
+select Video.titre, Video.dateSortie, AVG(note) as note_moyenne, SUM(nbVisionnement) visionnements_bandes_annonces from Film
+	join Video on Film.id = Video.id
+	join AProposDe on Video.id = AProposDe.noVideo
+	left join BandeAnnonce on BandeAnnonce.oeuvreId = video.id
+	left join Fichier on Fichier.noVideo = BandeAnnonce.id
+	-- and dateSortie > CURRENT_DATE - INTERVAL '1' MONTH -- le dernier mois
+	group by video.id, video.titre, dateSortie
+	having AVG(note) >= 80 -- commentaires sur la vidéo
+	order by AVG(note) desc
+;
+
+
+---------------------------------------------------------------------------------------
+-- cinema-projet.sql
+---------------------------------------------------------------------------------------
+-- Afficher toutes les projections d'un film avec George Clooney dans les acteurs,
+-- y compris les projections ayant deja eu lieu.
+Select * From (Cinema join
+        (Select noCinema as nc, noVideo as nv FROM Projette WHERE Projette.noVideo IN
+            (Select noVideo From APourRole where APourRole.id IN
+                (Select id From Acteur where Acteur.id IN
+                    (Select id as i From Personne WHERE prenom='George' AND nom='Clooney'))))
+            on Cinema.id = nc)
+;
+
+
+---------------------------------------------------------------------------------------
+-- best-review.sql
+---------------------------------------------------------------------------------------
+-- Retourne les videos ordonnes par notes
+-- Ca a pas rapport ce requete la.
+select titre, description, avg(note) as note_moyenne from Video
+	join AProposDe on Video.id = AProposDe.noVideo
+	group by video.id, video.titre, description
+	order by avg(note) desc
+;
+
+
+---------------------------------------------------------------------------------------
+-- bande-annonce-des-series-epouvantes.sql
+---------------------------------------------------------------------------------------
+-- affiche toutes les bandes-annonces des séries d'un certain genre
+select video.titre, video.description, fichier.chemin from serie
+	join video on video.id = serie.id
+	join bandeannonce on bandeannonce.oeuvreId = serie.id
+	join fichier on fichier.noVideo = bandeannonce.id
+	where genre = 'Épouvante'
+	order by video.dateSortie DESC
+;
+
+
+---------------------------------------------------------------------------------------
+-- auteur-homme.sql
+---------------------------------------------------------------------------------------
+-- Trouver le contenu de chaque article ecrit par un homme portant sur une serie
+-- dont la note est superieure a la moyenne des videos
+select prenom, nom, video.titre, contenu, note, datePublication from Article
+	join AProposDe on Article.id = AProposDe.noArticle
+	join Journaliste on Article.idAuteur = Journaliste.id
+	join Personne on Journaliste.id = Personne.id
+	join Serie on noVideo = Serie.id
+	join Video on Serie.id = Video.id
+	and Personne.sexe = 'homme'
+	and note > (select AVG(note) from AProposDe)
+;

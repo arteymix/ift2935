@@ -1,4 +1,4 @@
--- retourne le dernier video regarder par l'utilisateur 'e.trottier'
+-- derniers vidéos regardés avec le dernier commentaire et la dernière note
 select titre, description, nomUtilisateur, dateLocation, contenu, coalesce(note, 0) as note from Loue
 	natural join Fichier
 	join Video on Video.id = Fichier.noVideo -- jointure sur le chemin

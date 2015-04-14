@@ -1,9 +1,9 @@
-
--- Afficher toutes les projections d'un film avec George Clooney dans les acteurs, y compris les projections ayant deja eu lieu.
-Select *
-From (Cinema join
-        (Select noCinema as nc, noVideo as nv FROM Projette WHERE Projette.noVideo IN
-            (Select noVideo From APourRole where APourRole.id IN
-                (Select id From Acteur where Acteur.id IN
-                    (Select id as i From Personne WHERE prenom='George' AND nom='Clooney'))))
+-- affiche toutes les projections d'un film avec George Clooney comme acteur,
+-- y compris les projections ayant déjà eu lieu
+select *
+from (Cinema join
+        (select noCinema as nc, noVideo as nv from Projette where Projette.noVideo IN
+            (select noVideo from APourRole where APourRole.id IN
+                (select id from Acteur where Acteur.id IN
+                    (select id as i from Personne where prenom='George' AND nom='Clooney'))))
             on Cinema.id = nc)
