@@ -2,7 +2,10 @@
 
 -- todo: union avec les films ou il est acteur
 
-select id, titre, description from Video where id in
-    (select noVideo from Realise where Realise.id in
-        (select id from Realisateur where Realisateur.id in
-           (select id as i from Personne where prenom='George' and nom='Clooney')))
+select titre, description, DECODE(Realise.id, null, '--', 'Réalisateur') as realisateur,
+		DECODE(APourRole.id, null, '--', nomPersonnage) as nom_personnage
+	from Video
+	left join Realise on Realise.noVideo = Video.id   --
+	left join APourRole on APourRole.noVideo = Video.id --
+	where Realise.id in (select id as i from Personne where prenom='George' and nom='Clooney')
+	or    APourRole.id in (select id as i from Personne where prenom='George' and nom='Clooney')

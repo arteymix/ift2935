@@ -2,34 +2,28 @@
 
 {% block content %}
 
-    {% set traductions = {
-      'ID': 'Identifiant', 'TITRE': 'Titre', 'AVG(NOTE)': 'Note moyenne'}
-      %}
+<h3>{{ name }}</h3>
 
-    <h3>{{ name }}</h3>
+<h4>Requête SQL</h4>
+<pre>{{ statement }}</pre>
 
-    <h4>Requête SQL</h4>
-    <pre>{{ statement }}</pre>
+<h4>Résultats</h4>
+<table class="table">
 
-    <h4>Résultats</h4>
-    <table class="table">
+  <tr>
+    {% for header in cursor.description %}
+    <th>{{ header[0].title() }}</th>
+    {% endfor %}
+  </tr>
 
-        <tr>
-            {% for header in cursor.description %}
-                <th>{{ traductions[header[0]] }}</th>
-            {% endfor %}
-            <th>action</th>
-        </tr>
+  {% for row in cursor %}
+  <tr>
+    {% for col in row %}
+    <td>{{ col }}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
 
-        {% for row in cursor %}
-        <tr>
-            {% for col in row %}
-            <td>{{ col }}</td>
-            {% endfor %}
-            <td><a class="btn" href="{{ url_for('video', video_id=row[0]) }}">voir</a></td>
-        </tr>
-        {% endfor %}
-
-    </table>
+</table>
 
 {% endblock %}
