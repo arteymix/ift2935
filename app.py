@@ -78,8 +78,9 @@ def cinema(cinema_id):
 def custom_request(name):
     with open(os.path.join('sql', name) + '.sql') as f:
         cursor = db.cursor()
-        cursor.execute(f.read())
-    return render_template('request.html', name=name, cursor=cursor)
+        statement = f.read()
+        cursor.execute(statement)
+        return render_template('request.html', name=name, statement=statement, cursor=cursor)
 
 @app.route('/realisateur/<int:realisateur_id>')
 def realisateur(realisateur_id):
