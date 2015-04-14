@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<h2>{{ realisateur[1] }} {{ realisateur[2] }}</h2>
+
+<p>{{ realisateur[3] }}</p>
+
+<h3>Films réalisés</h3>
+<table class="table">
+  <tr>
+    <th>Titre</th>
+    <th>Description</th>
+  </tr>
+  {% for film in films %}
+  <tr>
+    <td><a href="{{ url_for('video', video_id=film[0]) }}">{{ film[1] }}</a></td>
+    <td>{{ film[2] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

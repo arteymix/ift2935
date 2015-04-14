@@ -422,16 +422,16 @@ insert into Projette values(00009, 29, to_date('19/04/15', 'DD/MM/YY'), '16:20')
 
 
 
-insert into Article values(0000001, to_date('19/02/14', 'DD/MM/YY'), 'Le Chevalier Noir est un bon film, tout comme Forrest Gump');
-insert into Article values(0000002, to_date('11/12/09', 'DD/MM/YY'), 'J''ai adoré la série The Walking Dead au complet');
-insert into Article values(0000003, to_date('02/10/09', 'DD/MM/YY'), 'Game of Thrones: Quelle mauvaise série!');
-insert into Article values(0000004, to_date('15/06/10', 'DD/MM/YY'), 'Très ému par le film Intouchables');
-insert into Article values(0000005, to_date('27/06/14', 'DD/MM/YY'), 'Mommy: quel beau film');
-insert into Article values(0000006, to_date('24/03/13', 'DD/MM/YY'), 'Du grand Tarantino!');
-insert into Article values(0000007, to_date('21/09/14', 'DD/MM/YY'), 'L''histoire de la Deuxième Guerre mondiale est un thème abusé au grand écran, mais ce film est un des rares a capté et a canalisé toutes les émotions pour les transmettre au téléspectateur.');
-insert into Article values(0000008, to_date('19/01/15', 'DD/MM/YY'), 'Un film à éviter');
-insert into Article values(0000009, to_date('01/11/12', 'DD/MM/YY'), 'J''ai perdu 1h45 de ma vie');
-insert into Article values(0000010, to_date('07/11/12', 'DD/MM/YY'), 'Honnête performance de l''acteur principal. À considérer dans la course aux Oscars');
+insert into Article values(0000001, to_date('19/02/14', 'DD/MM/YY'), 'Le Chevalier Noir est un bon film, tout comme Forrest Gump', 10000016);
+insert into Article values(0000002, to_date('11/12/09', 'DD/MM/YY'), 'J''ai adoré la série The Walking Dead au complet', 10000016);
+insert into Article values(0000003, to_date('02/10/09', 'DD/MM/YY'), 'Game of Thrones: Quelle mauvaise série!', 10000017);
+insert into Article values(0000004, to_date('15/06/10', 'DD/MM/YY'), 'Très ému par le film Intouchables', 10000018);
+insert into Article values(0000005, to_date('27/06/14', 'DD/MM/YY'), 'Mommy: quel beau film', 10000019);
+insert into Article values(0000006, to_date('24/03/13', 'DD/MM/YY'), 'Du grand Tarantino!', 10000020);
+insert into Article values(0000007, to_date('21/09/14', 'DD/MM/YY'), 'L''histoire de la Deuxième Guerre mondiale est un thème abusé au grand écran, mais ce film est un des rares a capté et a canalisé toutes les émotions pour les transmettre au téléspectateur.', 10000016);
+insert into Article values(0000008, to_date('19/01/15', 'DD/MM/YY'), 'Superbe serie, un classique instantane!', 10000016);
+insert into Article values(0000009, to_date('01/11/12', 'DD/MM/YY'), 'J''ai perdu 1h45 de ma vie', 10000025);
+insert into Article values(0000010, to_date('07/11/12', 'DD/MM/YY'), 'Honnête performance de l''acteur principal. À considérer dans la course aux Oscars', 10000026);
 
 
 ---insert into AProposDe values(noArticle,noVideo,note);
@@ -444,6 +444,7 @@ insert into AProposDe values(0000005, 30, 85);
 insert into AProposDe values(0000006, 24, 87);
 insert into AProposDe values(0000006, 27, 73);
 insert into AProposDe values(0000007, 29, 56);
+insert into AProposDe values(0000008, 10, 80);
 
 
 insert into MotCle values('intouchables', 31, 100);

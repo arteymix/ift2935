@@ -202,7 +202,9 @@ create table Projette(
 create table Article(
 	id				number(7) primary key,
 	datePublication	date,
-	contenu			varchar2(2000) not null
+	contenu			varchar2(2000) not null,
+	idJournaliste number(8),
+	constraint fkAuteur_article foreign key (idJournaliste) references Journaliste(id)
 );
 
 create table AProposDe(
