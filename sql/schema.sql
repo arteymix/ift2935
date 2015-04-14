@@ -1,4 +1,4 @@
-t---Le sexe est un varchar2(10) et est accompagne dans chaque table par une contrainte de domaine
+---Le sexe est un varchar2(10) et est accompagne dans chaque table par une contrainte de domaine
 ---Creer un type sexe pourrait eviter toutes les redondances, mais je nai pas ete capable de le faire
 ---Meme strugle pour les genre des vidéos et cie et les contraintes genreDomaineXXX
 ---Les attributs heure et adresse et sont aussi "problematiques". Presentement, ce sont que des varchar2(4) et varchar2(200). Au pire, on se dit qu'on est capable de rentrer des bonnes données
@@ -156,9 +156,9 @@ create table Cinema(
 	adresse		varchar2(200) not null,
 	telephone	varchar2(12),
 	email		varchar2(50),
-	constraint check_cinema_telephone check (REGEXP_LIKE(telephone,'^[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$')),
-	constraint check_cinema_email check (REGEXP_LIKE(email,'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$','I'))
 --
+	constraint check_cinema_telephone check (REGEXP_LIKE(telephone,'^[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$')),
+	constraint check_cinema_email check (REGEXP_LIKE(email,'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$'))
 );
 
 create table Projette(

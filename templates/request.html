@@ -2,13 +2,17 @@
 
 {% block content %}
 
+    {% set traductions = {
+      'ID': 'Identifiant', 'TITRE': 'Titre', 'AVG(NOTE)': 'Note moyenne'}
+      %}
+
     <h3>{{ name }}</h3>
 
     <table class="table">
 
         <tr>
             {% for header in cursor.description %}
-                <th>{{ header[0].title() }}</th>
+                <th>{{ traductions[header[0]] }}</th>
             {% endfor %}
             <th>action</th>
         </tr>

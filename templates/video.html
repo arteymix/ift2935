@@ -2,9 +2,22 @@
 
 {% block content %}
 
-{{ video }}
-
 <h2>{{ video[2] }} <small>{{ video[4] }}</small></h2>
+
+<h3>Réalisateurs</h3>
+<table class="table">
+{% for realisateur in realisateurs %}
+<tr>
+  <td>
+    <a href="{{ url_for('realisateur', realisateur_id=realisateur[0])}}">
+      {{ realisateur[3] }} {{ realisateur[4] }}
+    </a>
+  </td>
+</tr>
+{% else %}
+<tr class="danger"><td>Aucun réalisateur connu pour ce vidéo.</td></tr>
+{% endfor %}
+</table>
 
 <p>{{ video[1] }}</p>
 
