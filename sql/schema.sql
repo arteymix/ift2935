@@ -8,36 +8,6 @@
 ---liste des genres selon http://moviecovers.com/genres.html
 
 
----DESTRUCTION DES tableS
-DROP table MotCle;
-
-DROP table Loue;
-
-DROP table APourRole;
-DROP table Realise;
-
-DROP table Projette;
-DROP table Cinema;
-
-alter table Serie drop constraint fkSerieNoVideo_id; 
-
-DROP table Fichier;
-DROP table Emission;
-DROP table Film;
-DROP table OeuvreCinematographique;
-DROP table Serie;
-DROP table BandeAnnonce;
-DROP table Video;
-
-DROP table AProposDe;
-DROP table Article;
-
-DROP table Acteur;
-DROP table Realisateur;
-DROP table Profesionnel;
-DROP table Journaliste;
-DROP table Compte;
-DROP table Personne;
 
 create table Personne(
 	id            number(8) primary key,
@@ -45,8 +15,8 @@ create table Personne(
 	nom           varchar2(30) not null,
 	sexe          varchar2(10),
 	dateNaissance date not null,
-	dateDeces     date,
-	constraint sexeDomainePersonne check (sexe in('homme', 'femme', 'inconnu','cache'))
+	dateDeces     date
+--	,constraint sexeDomainePersonne check (sexe in('homme', 'femme', 'inconnu','cache'))
 );
 
 create table Journaliste (
