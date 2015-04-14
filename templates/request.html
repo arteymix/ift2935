@@ -1,17 +1,23 @@
 {% extends 'home.html' %}
 
 {% block content %}
+ 
+    <h3>{{ name }}</h3>
     
     <table class="table">
 
         <tr>
             {% for header in cursor.description %}
-                <th>{{ header[1] }}</th>
+                <th>{{ header[0].title() }}</th>
             {% endfor %}
         </tr>
 
         {% for row in cursor %}
-        <tr><td>{{ row }}</td></tr>
+        <tr>
+            {% for col in row %}
+            <td>{{ col }}</td>
+            {% endfor %}
+        </tr>
         {% endfor %}
 
     </table>
