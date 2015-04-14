@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <title>Netflix 2</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//bootswatch.com/sandstone/bootstrap.min.css">
   </head>
   <body>
   <header class="container">
@@ -23,6 +23,11 @@
         </form>
       </div>
     </div>
+    <ul class="nav">
+    {% for name in ['', '', ''] %}
+        <li><a href="{{ url_for('custom_request', name=name) }}"></a></li>
+    {% endfor %}
+    </ul>
   </hedaer>
   <div class="container">
     {% block content %}{% endblock %}

@@ -6,7 +6,7 @@
 
         <tr>
             {% for header in cursor.description %}
-                <th>{{ header }}</th>
+                <th>{{ header[1] }}</th>
             {% endfor %}
         </tr>
 
