@@ -1,4 +1,7 @@
 --George Clooney est realisateur, affiche les film realiser par george clooney
+
+-- todo: union avec les films ou il est acteur
+
 select id, titre, description from Video where id in
     (select noVideo from Realise where Realise.id in
         (select id from Realisateur where Realisateur.id in

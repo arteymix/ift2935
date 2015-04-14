@@ -80,7 +80,9 @@ def custom_request(name):
         cursor = db.cursor()
         statement = f.read()
         cursor.execute(statement)
-        return render_template('request.html', name=name, statement=statement, cursor=cursor)
+        return render_template('request.html', name=name,
+                statement=unicode(statement, 'utf-8'),
+                cursor=cursor)
 
 @app.route('/realisateur/<int:realisateur_id>')
 def realisateur(realisateur_id):
