@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<h2>{{ cinema[1] }}</h2>
+
+<h3>Projections</h3>
+
+{% for projection in projections %}
+
+<div class="media">
+  <div class="media-body">
+    <h4 class="media-heading">
+      <a href="{{ url_for('video', video_id=projection[0]) }}">{{ projection[1] }}</a>
+      <small>le {{ projection[3] }} à {{ projection[4]}}</small>
+    </h4>
+    <p>{{ projection[2] }}</p>
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
