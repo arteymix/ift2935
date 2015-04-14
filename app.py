@@ -19,7 +19,7 @@ db = connect(**app.config['database'])
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', cinemas=db.cursor().execute('select * from cinema'))
 
 @app.route('/search')
 def search():
