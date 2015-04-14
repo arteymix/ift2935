@@ -8,6 +8,10 @@
 ---liste des genres selon http://moviecovers.com/genres.html
 
 
+drop sequence video_seq;
+drop trigger video_pk_gen;
+
+
 ---DESTRUCTION DES tableS
 alter table OeuvreCinematographique drop constraint fkoeuvrecin_ID;
 alter table OeuvreCinematographique drop constraint fkoeuvrecin_Serie;
