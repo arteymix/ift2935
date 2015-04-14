@@ -1,4 +1,3 @@
--- prends en entrée un nom d'utilisateur
-select id from Realise where noVideo in (select noVideo FROM Loue where
-	nomUtilisateur=? ORDER BY dateLocation LIMIT 1)
-
+-- retourne le dernier video regarder par l'utilisateur 'e.trottier'
+select noVideo FROM Loue where
+	nomUtilisateur='e.trottier' ORDER BY dateLocation LIMIT 1;
