@@ -1,6 +1,6 @@
 --George Clooney est realisateur
 
-Select titre From Video where noVideo IN
-(Select noVideo From Realise where Realise.id IN
-    (Select id From Realisateur where Realisateur.id IN 
-        (Select id as i From Personne WHERE prenom='George' AND nom='Clooney')));
+select titre from Video where id in
+    (select noVideo from Realise where Realise.id in
+        (select id from Realisateur where Realisateur.id in
+            (select id as i from Personne where prenom='George' and nom='Clooney')));

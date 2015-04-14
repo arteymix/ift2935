@@ -24,8 +24,8 @@ def home():
 @app.route('/search')
 def search():
     results = db.cursor()
-    cursor.execute('select * from videos where name like ? limit 10',
-                   request.args.get('terms', '*'))
+    results.prepare('select * from video where description like :terms')
+    results.execute(None, {'terms': '*'})
     return render_template('search.html', results=results)
 
 @app.route('/custom-request/<name>')
