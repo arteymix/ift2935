@@ -1,0 +1,25 @@
+Vidéo(__noVideo__, description, titre, dateSortie, genre)
+MotClés(__mot__,__#noVideo__, importance)
+OeuvreCinematographique(__noVideo__, numero, #NoVideoSerie)
+Emission(__noVideo__)
+Film(__noVideo__)
+Serie(__noVideo__)
+Bande-Annonce(__noVideo__, #NoOeuvreCin)
+
+Cinéma(__NoCinema__, nom, adresse, telephone, email)
+Projette(__#NoCinema__,__#NoVideo__,__date__)
+
+Article(__noArticle__, date, contenu)
+AProposDe(__#noArticle__,__#NoVideo__, note)
+
+Fichier(__chemin__, prix, nbTelechargement, nbVisionnement, dateAcquisition, archivé, #NoVideo)
+Compte(__nomUtilisateur__, motDePasse, adresse, telephone, dateInscription, #id)
+Loue(__#nomUtilisateur__,__#chemin__,__date__, prix)
+
+Personne(__id__, prenom, nom, dateNaissance, sexe, dateDeces)
+Profesionnel(__id__, biographie)
+Journaliste(__id__)
+Acteur(__id__, biographie)
+Réalisateur(__id__, biographie)
+APourRole(__#id__,__#NoVideo__, nomPersonnage)
+Réalise(__#id__,__#NoVideo__)
