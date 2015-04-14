@@ -3,3 +3,6 @@ all:
 
 README.pdf: README.md
 	pandoc $< -o $@
+
+rapport.pdf: rapport.md
+	pandoc $< -o $@
