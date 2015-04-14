@@ -35,6 +35,13 @@ def custom_request(name):
         cursor.execute(f.read())
     return render_template('request.html', name=name, cursor=cursor)
 
+@app.route('/video/<int:video_id>')
+def video(video_id):
+    video = db.cursor()
+    video.prepare('select * from video where id=:id')
+    return render_template('video.html', video=video.execute(None, {'id':
+        video_id}).fetchone())
+
 @app.route('/preferences')
 def preferences():
     return render_template('preferences.html')
