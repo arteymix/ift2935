@@ -8,6 +8,10 @@
 ---liste des genres selon http://moviecovers.com/genres.html
 
 drop procedure insertSerie;
+drop procedure insertEmission;
+drop procedure insertFilm;
+drop procedure insertBandeAnnonce;
+
 drop sequence video_seq;
 drop trigger video_pk_gen;
 
