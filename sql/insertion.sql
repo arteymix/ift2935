@@ -78,6 +78,7 @@ insert into Personne values(10000018, 'Marsh', 'Morin', 'homme', to_date('05/09/
 insert into Personne values(10000019, 'Steve', 'Bolduc', 'homme', to_date('21/11/76', 'DD/MM/YY'), null);
 insert into Personne values(10000020, 'Olivier', 'Kenta', 'homme', to_date('26/04/67', 'DD/MM/YY'), null);
 insert into Personne values(10000021, 'Roman', 'Gendron', 'homme', to_date('03/03/68', 'DD/MM/YY'), null);
+
 insert into Personne values(10000022, 'Cédric', 'Lépine', 'homme', to_date('06/11/69', 'DD/MM/YY'), null);
 insert into Personne values(10000023, 'Léa', 'Saulnier', 'femme', to_date('06/03/56', 'DD/MM/YY'), null);
 insert into Personne values(10000024, 'Félix', 'Nantelois', 'homme', to_date('09/05/83', 'DD/MM/YY'), null);
@@ -406,11 +407,12 @@ insert into APourRole values(20000003, 310004, 'Christopher');
 insert into APourRole values(20000003, 310007, 'Maximo');
 insert into APourRole values(20000003, 310010, 'Ritu');
 insert into APourRole values(20000005, 300001, 'Albert');
+insert into APourRole values(20000006, 300001, 'G. le tueur');
 insert into APourRole values(20000007, 300008, 'Alice');
 insert into APourRole values(20000008, 300012, 'Simpaticia');
 
 ---insert into Realise(12345678 idRealisateur, 123456 noVideo);
-insert into Realise values(20000011, 300002);
+insert into Realise values(20000006, 300002);
 insert into Realise values(20000012, 300003);
 insert into Realise values(20000012, 300004);
 insert into Realise values(20000012, 310000);
