@@ -1,6 +1,9 @@
--- Select the top 10 most located movie and print their title.
+-- les titres 10 vidéos les plus loués avec le nombre de locations
 
-select titre, count(*) from Loue
-    natural join Video -- jointure sur le chemin
+select * from 
+    (select titre, count(*) as locations from Loue
+        natural join Fichier -- jointure sur le chemin
+        join Video on Video.id = Fichier.noVideo
+        group by noVideo, titre
+        order by locations)
     where rownum <= 10
-    group by chemin, titre
