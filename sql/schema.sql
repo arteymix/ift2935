@@ -79,7 +79,7 @@ end;
 
 
 create table Fichier (
-	chemin				varchar2(50),
+	chemin				varchar2(300),
 	prix				decimal(5,2) not null,
 	nbTelechargement	number(10) default 0 not null,
 	nbVisionnement		number(10) default 0 not null,
