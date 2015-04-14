@@ -67,7 +67,7 @@ create table Professionnel (
 create table Acteur (
 	id	number(8) primary key,
 --
-	constraint fkActeur foreign key (id) references Profesionnel
+	constraint fkActeur foreign key (id) references Professionnel
 );
 
 create table Realisateur (
@@ -112,8 +112,8 @@ create table Video(
 create table Fichier (
 	chemin				varchar2(50),
 	prix				decimal(5,2) not null,
-	nbTelechargement	number(10) not null default 0,
-	nbVisionnement		number(10) not null default 0,
+	nbTelechargement	number(10) not null default(0),
+	nbVisionnement		number(10) not null default(0),
 	dateAcquisition		date,
 	estArchive			number(1) not null, -- boolean
 	noVideo				number(6),
@@ -136,15 +136,14 @@ create table Serie (
 create table OeuvreCinematographique(
 	id		number(6) primary key,
 	serie	number(6) default null,
-	numero	number(6) default 0,
+	numero	number(6) default(0),
 --
-	constraint fkOeuvreCinematographique_id foreign key (id) references Video(id),
-	constraint fkOeuvreCinematographique_serie foreign key (id) references Serie(id),
+	constraint fkOeuvreCin_id foreign key (id) references Video(id),
+	constraint fkOeuvreCin_serie foreign key (id) references Serie(id),
 	constraint numeroDomaineOC check (numero >= 0)
 );
 
 alter table Serie add constraint fkSerieNoVideo_id foreign key (id) references OeuvreCinematographique(id); 
-
 
 create table Emission(
 	id number(6) primary key,
