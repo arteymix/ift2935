@@ -272,10 +272,28 @@ récentes en premier.
 
 ## Films de George Clooney (4 tables)
 
+```sql
+
+select titre, description,
+       DECODE(Realise.id, null, '--', 'Réalisateur') as realisateur,
+       DECODE(APourRole.id, null, '--', nomPersonnage) as nom_personnage
+    from Video
+    left join Realise on Realise.noVideo = Video.id
+    left join APourRole on APourRole.noVideo = Video.id
+    where Realise.id in (select id as i from Personne
+                             where prenom='George' and nom='Clooney')
+    or APourRole.id in (select id as i from Personne
+                            where prenom='George' and nom='Clooney')
+```
+
 Le fichier george-clooney-movies.sql correspond à cette requête. Cette requête
 affiche le titre, la description ainsi que possiblement la fonction de George
 Clooney (le nom de son personnage dans le cas d'un rôle) dans l'ensemble des
 vidéos l'impliquants à titre de réalisateur ou d'acteur.
+
+`decode` agit comme une ternaire en comparant le permier argument avec le
+deuxième. Le troisième est retourné en cas de vérité, sinon le quatrième est
+retourné. On peut ainsi afficher « Réalisateur » au lieu d'un identifiant.
 
 ## Meilleures revues (2 tables)
 
