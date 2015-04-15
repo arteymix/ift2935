@@ -3,9 +3,11 @@
 % Guillaume Poirier-Morency Émile Trottier
 
 Fichiers
--------------------------------
+--------
 
-Le fichier "README.pdf", se trouvant à la racine du projet, contient les instructions pour l'installation des dépendances ainsi que l'exécution de l'application.
+Le fichier "README.pdf", se trouvant à la racine du projet, contient les
+instructions pour l'installation des dépendances ainsi que l'exécution de
+l'application.
 
 Les fichiers de requêtes SQL sont structurés de la manière suivante dans le
 dossier `sql/`:
@@ -18,14 +20,16 @@ insertion.sql popule la base de données
 
 Les autres fichiers servent à stocker les requêtes SQL individuelles.
 
-Pour répondre aux exigences du projet, nous avons regroupés les requêtes et les insertions à l'intérieur "sql/final/LMB.sql" alors que les instructions de 'drop' et de création de table sont dans le fichier "sql/final/LDD.sql".
+Pour répondre aux exigences du projet, nous avons regroupés les requêtes et les
+insertions à l'intérieur "sql/final/LMB.sql" alors que les instructions de
+'drop' et de création de table sont dans le fichier "sql/final/LDD.sql".
 
 
 Implémentation de l'application
 -------------------------------
 
-Le projet est basé sur [flask](flask.pocoo.org), un micro-framework web en
-Python.
+Le projet est basé sur [flask](http://flask.pocoo.org), un micro-framework web
+en Python.
 
 Une application peut être facilement décrite à l'aide d'un mécanisme de routage
 par décorateur.
@@ -46,11 +50,17 @@ Des routes ont été déclarées pour
  - afficher les données d'un vidéo
  - afficher les données d'un réalisateur
 
-Les routes utilisent diverses petites requêtes paramétrées qui ne figurent pas dans le fichier "LMD.sql" qui se concentre plutôt sur les 10 requêtes accessibles par les onglets. Elles servent, entre autre, à valider l'identité d'un utilisateur ou à récupérer des informations reliées aux vidéos (les réalisateurs et les acteurs).
+Les routes utilisent diverses petites requêtes paramétrées qui ne figurent pas
+dans le fichier "LMD.sql" qui se concentre plutôt sur les 10 requêtes
+accessibles par les onglets. Elles servent, entre autre, à valider l'identité
+d'un utilisateur ou à récupérer des informations reliées aux vidéos (les
+réalisateurs et les acteurs).
 
 ##Authentification
+
 Un usager peut s'authentifier à l'aide d'un nom d'utilisateur et d'un mot de
-passe. Par exemple, il est possible de se connecter avec l'utilisateur 'e.trottier' avec le mot de passe 'abc1234'.
+passe. Par exemple, il est possible de se connecter avec l'utilisateur
+`e.trottier` avec le mot de passe `abc1234`.
 
 ![Page d'accueil en tant qu'utilisateur anonyme](../screenshots/homepage.png)
 
@@ -58,9 +68,10 @@ passe. Par exemple, il est possible de se connecter avec l'utilisateur 'e.trotti
 
 ## Onglets
 
-L'exécution des 10 requêtes demandées se fait au sein de la même route, accessible par les différents onglets. Un
-fichier contenant la requête est lu et exécuté sur la base de données. Un
-template générique s'occupe de présenter les résultats dans un tableau.
+L'exécution des 10 requêtes demandées se fait au sein de la même route,
+accessible par les différents onglets. Un fichier contenant la requête est lu
+et exécuté sur la base de données. Un template générique s'occupe de présenter
+les résultats dans un tableau.
 
 ![L'onglet "Bandes-annonces des séries d'épouvantes (4 tables)"](../screenshots/exemple-de-requete-sql.png)
 
