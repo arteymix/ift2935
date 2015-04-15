@@ -139,10 +139,10 @@ requête est aussi affiché dans l'onglet.
 ```sql
 select *
 from (Cinema join
-    (select noCinema as nc, noVideo as nv from Projette where Projette.noVideo IN
-        (select noVideo from APourRole where APourRole.id IN
-            (select id from Acteur where Acteur.id IN
-                (select id as i from Personne where prenom='George' AND nom='Clooney'))))
+    (select noCinema as nc, noVideo as nv from Projette where Projette.noVideo in
+    (select noVideo from APourRole where APourRole.id in
+    (select id from Acteur where Acteur.id in
+    (select id as i from Personne where prenom='George' and nom='Clooney'))))
     on Cinema.id = nc)
 ```
 
@@ -154,13 +154,13 @@ George Clooney comme acteur (et non les films qu'il a fait comme réalisateur).
 
 ```sql
 select prenom, nom, video.titre, contenu, note, datePublication from Article
-				join AProposDe on Article.id = AProposDe.noArticle
-				join Journaliste on Article.idAuteur = Journaliste.id
-				join Personne on Journaliste.id = Personne.id
-				join Serie on noVideo = Serie.id
-				join Video on Serie.id = Video.id
-				and Personne.sexe = 'homme'
-				and note > (select AVG(note) from AProposDe)
+    join AProposDe on Article.id = AProposDe.noArticle
+    join Journaliste on Article.idAuteur = Journaliste.id
+    join Personne on Journaliste.id = Personne.id
+    join Serie on noVideo = Serie.id
+    join Video on Serie.id = Video.id
+    and Personne.sexe = 'homme'
+    and note > (select AVG(note) from AProposDe)
 ```
 
 Le fichier auteur-homme.sql correspond à cette requête. Cette requête trouve
@@ -173,14 +173,16 @@ publication de l'articles ainsi que le nom de la série concernée.
 ## Derniers vidéos vus (6 tables)
 
 ```sql
-select titre, description, nomUtilisateur, dateLocation, contenu, coalesce(note, 0) as note from Loue
-				natural join Fichier
-				join Video on Video.id = Fichier.noVideo -- jointure sur le chemin
-				left join AProposDe on AProposDe.noVideo = Video.id
-				left join Article on Article.id = AProposDe.noArticle
-				join Personne on Article.idAuteur = Personne.id
-				GROUP BY video.id, titre, description, nomUtilisateur, article.id, dateLocation, datePublication, contenu, note
-				ORDER BY dateLocation DESC, datePublication DESC
+select titre, description, nomUtilisateur, dateLocation, contenu,
+       coalesce(note, 0) as note from Loue
+    natural join Fichier
+    join Video on Video.id = Fichier.noVideo -- jointure sur le chemin
+    left join AProposDe on AProposDe.noVideo = Video.id
+    left join Article on Article.id = AProposDe.noArticle
+    join Personne on Article.idAuteur = Personne.id
+    GROUP BY video.id, titre, description, nomUtilisateur, article.id,
+             dateLocation, datePublication, contenu, note
+    ORDER BY dateLocation DESC, datePublication DESC
 ```
 
 Le fichier last-seen-video.sql correspond à cette requête. Cette requête trouve
@@ -193,15 +195,16 @@ l'utilisateur. Si on utilisateur n'a pas donné de note, il ne sera pas affiché
 Le fichier films-attendus.sql correspond à cette requête.
 
 ```sql
-select Video.titre, Video.dateSortie, AVG(note) as note_moyenne, COALESCE(SUM(nbVisionnement), 0) visionnements_bandes_annonces from Film
-				join Video on Film.id = Video.id
-				join AProposDe on Video.id = AProposDe.noVideo
-				left join BandeAnnonce on BandeAnnonce.oeuvreId = video.id
-				left join Fichier on Fichier.noVideo = BandeAnnonce.id
-				-- and dateSortie > CURRENT_DATE - INTERVAL '1' MONTH -- le dernier mois
-				group by video.id, video.titre, dateSortie
-				having AVG(note) >= 80 -- commentaires sur la vidéo
-				order by AVG(note) desc
+select Video.titre, Video.dateSortie, AVG(note) as note_moyenne,
+       COALESCE(SUM(nbVisionnement), 0) visionnements_bandes_annonces from Film
+    join Video on Film.id = Video.id
+    join AProposDe on Video.id = AProposDe.noVideo
+    left join BandeAnnonce on BandeAnnonce.oeuvreId = video.id
+    left join Fichier on Fichier.noVideo = BandeAnnonce.id
+    -- and dateSortie > CURRENT_DATE - INTERVAL '1' MONTH -- le dernier mois
+    group by video.id, video.titre, dateSortie
+    having AVG(note) >= 80 -- commentaires sur la vidéo
+    order by AVG(note) desc
 ```
 
 Récupère les films les plus attendus en considérant le nombre de vues sur leurs
@@ -221,8 +224,10 @@ dernier mois est commenté afin de présenter une bonne quantité de résultats.
 Le fichier `mots-cles-des-videos-epouvante.sql` correspond à cette requête.
 
 ```sql
-select mot, count(videoId) as nombre_videos, AVG(importance) as importance_moyenne from MotCle where videoId in
-    (select id from Video where genre='Épouvante' or genre='Horreur')
+select mot, count(videoId) as nombre_videos,
+       AVG(importance) as importance_moyenne from MotCle
+    where videoId in
+        (select id from Video where genre='Épouvante' or genre='Horreur')
     group by mot
 ```
 
@@ -237,11 +242,11 @@ Le fichier `bande-annonce-des-series-epouvante.sql` correspond à cette requête
 
 ```sql
 select video.titre, video.description, fichier.chemin from serie
-				join video on video.id = serie.id
-				join bandeannonce on bandeannonce.oeuvreId = serie.id
-				join fichier on fichier.noVideo = bandeannonce.id
-				where genre = 'Épouvante'
-				order by video.dateSortie DESC
+    join video on video.id = serie.id
+    join bandeannonce on bandeannonce.oeuvreId = serie.id
+    join fichier on fichier.noVideo = bandeannonce.id
+    where genre = 'Épouvante'
+    order by video.dateSortie DESC
 ```
 
 Cette requête récupère les bande-annonces des dernières séries d'épouvante.
@@ -266,7 +271,7 @@ vidéos l'impliquants à titre de réalisateur ou d'acteur.
 ```sql
 select titre, description, avg(note) as note_moyenne from Video
     join AProposDe on Video.id = AProposDe.noVideo
-	   group by video.id, video.titre, description
+    group by video.id, video.titre, description
     order by avg(note) desc
 ```
 
@@ -300,8 +305,8 @@ par nombre de location. Le titre et le nombre de locations sont affichés.
 ```sql
 select * from
     (select titre, nbVisionnement, nbTelechargement from Video
-		  join Fichier on Video.id = Fichier.noVideo
-		  order by nbVisionnement desc, nbTelechargement desc)
+    join Fichier on Video.id = Fichier.noVideo
+    order by nbVisionnement desc, nbTelechargement desc)
     where rownum <= 10
 ```
 
