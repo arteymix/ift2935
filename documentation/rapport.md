@@ -1,13 +1,13 @@
 % Rapport de projet final
-% Vincent Antaki Alexandre St-Louis Fortier
-% Guillaume Poirier-Morency Émile Trottier
+% Vincent Antaki, Alexandre St-Louis Fortier
+% Guillaume Poirier-Morency et Émile Trottier
 
 Fichiers
 --------
 
 Le fichier "README.pdf", se trouvant à la racine du projet, contient les
 instructions pour l'installation des dépendances ainsi que l'exécution de
-l'application.
+l'application. De plus, il est en annexe de ce document.
 
 Les fichiers de requêtes SQL sont structurés de la manière suivante dans le
 dossier `sql/`:

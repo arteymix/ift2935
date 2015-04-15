@@ -21,7 +21,7 @@ satisfaire quelques dépendances:
 
  - [Oracle Instant Client](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html)
  - [cx_Oracle](http://cx-oracle.sourceforge.net/)
-	- Python 2.7 (Python 3+ ne fonctionne pas)
+ - Python 2.7 (Python 3+ ne fonctionne pas)
 
 Les bases de données Oracle du DIRO roulent sous la version 10.2.0.1, alors
 vous pouvez installer la plus récente des 10.2 (10.2.0.5 à ma dernière
